@@ -16,9 +16,6 @@ export default {
         compactaBT: ["compactaBT", ...defaultTheme.fontFamily.sans],
         FormaDJRMicro: ["FormaDJRMicro", ...defaultTheme.fontFamily.sans],
       },
-      backgroundImage: {
-        pattern: "url('./src/images/back.svg')",
-      },
     },
     colors: {
       "deep-blue": "#121926",

@@ -12,9 +12,14 @@ import Rocky from "../images/clients/rockypoint.svg";
 import Santader from "../images/clients/santander.svg";
 import Topper from "../images/clients/topper.svg";
 import Zurich from "../images/clients/zurich.svg";
+
+import { getImage } from "astro:assets";
+import myBackground from "../images/back.svg"
+
+const optimizedBackground = await getImage({src: myBackground, format: 'webp'})
 ---
 
-<div class="bg-pattern bg-repeat bg-cover w-full">
+<div class=" bg-repeat bg-cover w-full" style={`background-image: url(${optimizedBackground.src});`}>
   <div class="container h-full flex mx-auto flex-col">
     <div class="flex w-full justify-end gap-8 py-40 items-end">
       <!-- <div class="flex w-1/2 h-40 text-end items-end"> -->
