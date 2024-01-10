@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets";
+import Bar from "../images/bar.svg";
+---
+
+<article
+  class="container h-full flex justify-center items-center flex-col py-40" id="about"
+>
+  <div class="flex items-end w-full justify-end text-end font-FormaDJRMicro">
+    <div class="text-light-gold text-4xl flex gap-14 flex-col">
+      <div class="grid grid-cols-2 before:content-['']">
+        <p>
+          Una empresa dedicada a la producción gastronómica e infraestructura
+          para eventos y comercios.
+        </p>
+      </div>
+      <div class="grid grid-cols-2">
+        <div class="h-full flex justify-center">
+          <Image src={Bar} alt="ERP" />
+        </div>
+        <div class="flex w-full">
+          <p>
+            Con nuestro propio centro de producción y junto a la alianza
+            española con Star Carpas, tenemos la capacidad de brindar ,
+            infraestructura , producción y servicio para eventos masivos,
+            empresariales y acciones gastronómicas, a medida de de cualquier
+            cliente y exigencia.
+          </p>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 before:content-['']">
+        <p>
+          Con más de 20 años de experiencia, trabajamos con las prinicipales
+          empresas y eventos masivos de la Argentina.
+        </p>
+      </div>
+    </div>
+  </div>
+</article>

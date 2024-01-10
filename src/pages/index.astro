@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionBlue from '../components/SectionBlue.astro';
+import Intro from '../components/Intro.astro';
+import SectionYellow from '../components/SectionYellow.astro';
+import Services from '../components/Services.astro';
+import About from '../components/About.astro';
+import Clients from '../components/Clients.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<SectionBlue> 
+			<Intro />
+		</SectionBlue>
+		<SectionYellow>
+			<Services />
+		</SectionYellow>
+		<SectionBlue> 
+			<About />
+		</SectionBlue>
+		<SectionYellow>
+			<Clients />
+		</SectionYellow>
+	</main>
+</Layout>

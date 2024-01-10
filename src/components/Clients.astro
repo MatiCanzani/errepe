@@ -1,0 +1,88 @@
+---
+import { Image } from "astro:assets";
+import Almundo from "../images/clients/almundo.svg";
+import BI from "../images/clients/bi.svg";
+import Andreani from "../images/clients/andreani.svg";
+import Lolla from "../images/clients/Lolla.svg";
+import KC from "../images/clients/kc.svg";
+import Carp from "../images/clients/carp.svg";
+import Oracle from "../images/clients/oracle.svg";
+import Pariscrepas from "../images/clients/paricrepas.svg";
+import Rocky from "../images/clients/rockypoint.svg";
+import Santader from "../images/clients/santander.svg";
+import Topper from "../images/clients/topper.svg";
+import Zurich from "../images/clients/zurich.svg";
+---
+
+<div class="bg-pattern bg-repeat bg-cover w-full">
+  <div class="container h-full flex mx-auto flex-col">
+    <div class="flex w-full justify-end gap-8 py-40 items-end">
+      <!-- <div class="flex w-1/2 h-40 text-end items-end"> -->
+        <h2 class="text-deep-blue text-4xl font-extrabold font-FormaDJRMicro">
+          Experiencia y trayectoria,<br />
+          y sobretodas las cosas , confianza.
+        </h2>
+      <!-- </div> -->
+    
+      <div class="flex flex-col gap-0">
+        <h3 class="uppercase text-deep-blue text-[10rem] text-end font-compactaBT">
+          NUESTROS CLIENTES
+        </h3>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-32 w-4/5 mx-auto my-40">
+      <div class="flex items-center justify-center">
+        <Image
+          src={BI}
+          alt="Boehringer Ingelheim"
+          width="250"
+          class="max-h-36"
+        />
+      </div>
+      <div class="flex items-center justify-center">
+        <Image src={Lolla} alt="Lolla Paloza" width="250" class="max-h-36" />
+      </div>
+      <div class="flex items-center justify-center">
+        <Image src={Oracle} alt="Almundo" width="250" class="max-h-36" />
+      </div>
+      <div class="flex items-center justify-center">
+        <Image
+          src={Carp}
+          alt="Club Atletico River PLate"
+          width="250"
+          class="max-h-36"
+        />
+      </div>
+      <div class="flex items-center justify-center">
+        <Image src={KC} alt="Kimberly Clark" width="250" class="max-h-36" />
+      </div>
+      <div class="flex items-center justify-center">
+        <Image src={Andreani} alt="Andreani" width="250" class="max-h-36" />
+      </div>
+      <div class="flex items-center justify-center">
+        <Image src={Zurich} alt="Zurich" width="250" class="max-h-36" />
+      </div>
+      <div class="flex items-center justify-center">
+        <Image src={Santader} alt="Santader" width="250" class="max-h-36" />
+      </div>
+      <div class="flex items-center justify-center">
+        <Image src={Almundo} alt="Almundo" width="250" class="max-h-36" />
+      </div>
+      <div class="flex items-center justify-center">
+        <Image src={Topper} alt="Topper" width="250" class="max-h-36" />
+      </div>
+      <div class="flex items-center justify-center">
+        <Image
+          src={Pariscrepas}
+          alt="Pariscrepas"
+          width="250"
+          class="max-h-36"
+        />
+      </div>
+      <div class="flex items-center justify-center">
+        <Image src={Rocky} alt="Rocky Point" width="250" class="max-h-36" />
+      </div>
+    </div>
+  </div>
+</div>

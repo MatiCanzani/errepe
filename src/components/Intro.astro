@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../images/logo.svg";
+---
+
+<script>
+  import { gsap } from "gsap";
+  import { TextPlugin } from "gsap/TextPlugin";
+
+  gsap.registerPlugin(TextPlugin);
+
+  gsap.from(".title", {
+    alpha: 0,
+    duration: 1.5,
+    ease: "power1.easeOut",
+  });
+
+  gsap.fromTo(
+    ".subtitle",
+    {
+      opacity: 0,
+    },
+    {
+      duration: 1,
+      opacity: 1,
+      text: "productora",
+      delay: 0.5,
+      ease: "none",
+    }
+  );
+</script>
+
+<div class="h-screen w-full flex justify-center items-center mx-auto gap-20">
+  <Image src={Logo} alt="ERP" height="100" width="100" />
+  <div>
+    <h1 class="uppercase text-light-gold text-8xl title font-compactaBT">
+      errepé
+    </h1>
+    <h2 class="uppercase text-gold text-4xl subtitle"></h2>
+  </div>
+</div>
