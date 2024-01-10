@@ -8,12 +8,16 @@
    version="1.1"
    id="svg1"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
+   xmlns:svg="http://www.w3.org/2000/svg"
+   >
+   
   <defs
      id="defs1">
     <clipPath
        clipPathUnits="userSpaceOnUse"
-       id="clipPath24">
+       id="clipPath24"
+       class="logo-svg"
+       >
       <path
          d="M 0,1920 H 1080 V 0 H 0 Z"
          transform="translate(-356.67591,-1035.192)"
