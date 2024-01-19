@@ -1,26 +1,35 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import SectionBlue from '../components/SectionBlue.astro';
-import Intro from '../components/Intro.astro';
-import SectionYellow from '../components/SectionYellow.astro';
-import Services from '../components/Services.astro';
-import About from '../components/About.astro';
-import Clients from '../components/Clients.astro';
+import Layout from "../layouts/Layout.astro";
+import SectionBlue from "../components/SectionBlue.astro";
+import Intro from "../components/Intro.astro";
+import SectionYellow from "../components/SectionYellow.astro";
+import Services from "../components/Services.astro";
+import About from "../components/About.astro";
+import Clients from "../components/Clients.astro";
+import Contact from "../components/Contact.astro";
+import Works from "../components/Works.astro";
+import Section from "../components/Section.astro";
 ---
 
 <Layout title="ERREPE">
-	<main>
-		<SectionBlue> 
-			<Intro />
-		</SectionBlue>
-		<SectionYellow>
-			<Services />
-		</SectionYellow>
-		<SectionBlue> 
-			<About />
-		</SectionBlue>
-		<SectionYellow>
-			<Clients />
-		</SectionYellow>
-	</main>
+  <main>
+    <SectionBlue>
+      <Intro />
+    </SectionBlue>
+    <SectionYellow>
+      <Services />
+    </SectionYellow>
+    <SectionBlue>
+      <About />
+    </SectionBlue>
+    <SectionYellow>
+      <Clients />
+    </SectionYellow>
+    <Section>
+      <Works />
+    </Section>
+    <SectionBlue>
+      <Contact />
+    </SectionBlue>
+  </main>
 </Layout>

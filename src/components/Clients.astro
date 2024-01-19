@@ -14,35 +14,41 @@ import Topper from "../images/clients/topper.svg";
 import Zurich from "../images/clients/zurich.svg";
 
 import { getImage } from "astro:assets";
-import myBackground from "../images/back.svg"
+import myBackground from "../images/back.svg";
 
-const optimizedBackground = await getImage({src: myBackground, format: 'webp'})
+const optimizedBackground = await getImage({
+  src: myBackground,
+  format: "webp",
+});
 ---
 
-<div class=" bg-repeat bg-cover w-full" style={`background-image: url(${optimizedBackground.src});`}>
-  <div class="container h-full flex mx-auto flex-col">
-    <div class="flex w-full justify-end gap-8 py-40 items-end">
-      <!-- <div class="flex w-1/2 h-40 text-end items-end"> -->
-        <h2 class="text-deep-blue text-4xl font-extrabold font-FormaDJRMicro">
-          Experiencia y trayectoria,<br />
-          y sobretodas las cosas , confianza.
-        </h2>
-      <!-- </div> -->
-    
+<div
+  class="bg-repeat bg-cover w-full"
+  style={`background-image: url(${optimizedBackground.src});`}
+>
+  <div class="container w-10/12 xl:w-full h-full flex mx-auto flex-col">
+    <div class="flex w-full justify-end flex-col-reverse xl:flex-row gap-8 py-10 xl:py-40 items-end">
+      <h2 class="text-deep-blue text-2xl md:text-4xl font-extrabold font-FormaDJRMicro">
+        Experiencia y trayectoria,<br />
+        y sobretodas las cosas , confianza.
+      </h2>
+
       <div class="flex flex-col gap-0">
-        <h3 class="uppercase text-deep-blue text-[10rem] text-end font-compactaBT leading-[90%]">
+        <h3
+          class="uppercase text-deep-blue text-[5rem] md:text-[8rem] xl:text-[12rem] text-end font-compactaBT leading-[90%]"
+        >
           NUESTROS CLIENTES
         </h3>
       </div>
     </div>
 
-    <div class="grid grid-cols-2 gap-32 w-4/5 mx-auto my-40">
+    <div class="grid grid-cols-2 gap-24 md:gap-32 xl:w-4/5 mx-auto my-4 xl:my-40">
       <div class="flex items-center justify-center">
         <Image
           src={BI}
           alt="Boehringer Ingelheim"
           width="250"
-          class="max-h-36"
+          class="max-h-20 xl:max-h-36"
         />
       </div>
       <div class="flex items-center justify-center">
@@ -56,37 +62,37 @@ const optimizedBackground = await getImage({src: myBackground, format: 'webp'})
           src={Carp}
           alt="Club Atletico River PLate"
           width="250"
-          class="max-h-36"
+          class="max-h-20 xl:max-h-36"
         />
       </div>
       <div class="flex items-center justify-center">
-        <Image src={KC} alt="Kimberly Clark" width="250" class="max-h-36" />
+        <Image src={KC} alt="Kimberly Clark" width="250" class="max-h-20 xl:max-h-36" />
       </div>
       <div class="flex items-center justify-center">
-        <Image src={Andreani} alt="Andreani" width="250" class="max-h-36" />
+        <Image src={Andreani} alt="Andreani" width="250" class="max-h-20 xl:max-h-36" />
       </div>
       <div class="flex items-center justify-center">
-        <Image src={Zurich} alt="Zurich" width="250" class="max-h-36" />
+        <Image src={Zurich} alt="Zurich" width="250" class="max-h-20 xl:max-h-36" />
       </div>
       <div class="flex items-center justify-center">
-        <Image src={Santader} alt="Santader" width="250" class="max-h-36" />
+        <Image src={Santader} alt="Santader" width="250" class="max-h-20 xl:max-h-36" />
       </div>
       <div class="flex items-center justify-center">
-        <Image src={Almundo} alt="Almundo" width="250" class="max-h-36" />
+        <Image src={Almundo} alt="Almundo" width="250" class="max-h-20 xl:max-h-36" />
       </div>
       <div class="flex items-center justify-center">
-        <Image src={Topper} alt="Topper" width="250" class="max-h-36" />
+        <Image src={Topper} alt="Topper" width="250" class="max-h-20 xl:max-h-36" />
       </div>
       <div class="flex items-center justify-center">
         <Image
           src={Pariscrepas}
           alt="Pariscrepas"
           width="250"
-          class="max-h-36"
+          class="max-h-20 xl:max-h-36"
         />
       </div>
       <div class="flex items-center justify-center">
-        <Image src={Rocky} alt="Rocky Point" width="250" class="max-h-36" />
+        <Image src={Rocky} alt="Rocky Point" width="250" class="max-h-20 xl:max-h-36" />
       </div>
     </div>
   </div>

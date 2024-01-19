@@ -6,63 +6,65 @@ import Logo from "../images/logo-black.svg";
 <script>
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
-  import SplitType from 'split-type'
+  import SplitType from "split-type";
 
-  gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(ScrollTrigger);
 
-const split = new SplitType('h3')
+  const split = new SplitType("h3");
 
-// split.lines.forEach((target) => {
-  gsap.from('.char', {
+  // split.lines.forEach((target) => {
+  gsap.from(".char", {
     stagger: 0.5,
     delay: 0.2,
-    opacity:0,
+    opacity: 0.1,
     duration: 0.5,
     scrollTrigger: {
-      trigger:'#textSection',
+      trigger: "#textSection",
       once: true,
-      // endTrigger: "#about",
       scrub: 1,
       start: "top top",
-      end: "bottom center"
-    }
+      end: "bottom center",
+    },
   });
-// });
+  // });
 </script>
 <div
-  class="container flex mx-auto justify-center items-end flex-col h-full py-40"
+  class="container w-11/12 md:w-full flex mx-auto justify-center items-end flex-col h-full py-40"
   id="textSection"
 >
   <div class="w-full flex justify-end my-20">
     <Image src={Logo} alt="ERP" />
   </div>
-  <div class="flex w-full mt-20">
+  <div class="flex w-full mt-20 flex-col xl:flex-row">
     <div class="flex w-full text-end items-end">
       <h2
-        class="flex-grow text-deep-blue text-4xl font-FormaDJRMicro font-extrabold px-5 py-4"
+        class="flex-grow text-deep-blue text-2xl xl:text-4xl md:text-6xl font-FormaDJRMicro font-extrabold py-4 mb-10 xl:mb-0"
       >
         A lo que nos dedicamos:
       </h2>
     </div>
     <div class="flex w-full justify-end">
-      <h3 id="services"
-        class="uppercase text-deep-blue text-[12rem] font-compactaBT leading-[100%] text-end "
+      <h3
+        id="services"
+        class="uppercase text-deep-blue text-[5rem] md:text-[8rem] xl:text-[12rem] font-compactaBT leading-[100%] text-end"
       >
         EVENTOS
       </h3>
     </div>
   </div>
-  <div class="text-right h-full w-3/4">
-    <h3 id="services"
-      class="uppercase text-deep-blue text-[12rem] font-compactaBT flex leading-[100%]"
+  <div class="text-right h-full w-full md:w-3/4">
+    <h3
+      id="services"
+      class="uppercase text-deep-blue text-[5rem] md:text-[8rem] xl:text-[12rem] font-compactaBT flex leading-[100%]"
     >
       MOBILIARIOS PRODUCCIÓN CATERING GASTRONOMÍA CONSULTING
     </h3>
-    <p class="text-deep-blue text-4xl font-extrabold font-FormaDJRMicro mt-10">Poseemos nuestra propia infraestrucutura,
-      contando con un centro de producción
-      gastronómico propio, que brinda serivicio tanto
-      para eventos como para comercios.</p>
+    <p
+      class="text-deep-blue text-2xl xl:text-4xl font-extrabold font-FormaDJRMicro mt-10"
+    >
+      Poseemos nuestra propia infraestrucutura, contando con un centro de
+      producción gastronómico propio, que brinda serivicio tanto para eventos
+      como para comercios.
+    </p>
   </div>
-
- 
 </div>

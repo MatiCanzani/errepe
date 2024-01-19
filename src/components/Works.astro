@@ -1,0 +1,30 @@
+---
+import Images from "./Images.astro";
+import Front01 from "../images/works/Desktop_1_1.png";
+import Front02 from "../images/works/Desktop_2_2.png";
+import Front03 from "../images/works/Desktop_3_3.png";
+---
+<div class="w-full xl:w-full h-full mx-auto my-0">
+  <div class="h-full w-full">
+    <Images
+    alt="Event-01"
+    frontImage={Front01}
+    bg="bg-event-1-mobile md:bg-event-1-desktop"
+    />
+  </div>
+  <div class="h-full w-full">
+    <Images
+    alt="Event-02"
+    frontImage={Front02}
+    bg="bg-event-2-mobile md:bg-event-2-desktop"
+    />
+  </div>
+  <div class="h-full w-full">
+    <Images
+    alt="Event-03"
+    frontImage={Front03}
+    bg="bg-event-3-mobile md:bg-event-3-desktop"
+    />
+  </div>
+</div>
+  

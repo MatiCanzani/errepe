@@ -1,0 +1,17 @@
+---
+import { getImage } from "astro:assets";
+
+const { bg, alt, frontImage } = Astro.props;
+
+const optimizedFront = await getImage({
+  src: frontImage,
+  format: "webp",
+});
+
+---
+
+<div
+  class:list={["bg-auto bg-center bg-no-repeat", bg]}
+>
+  <img src={optimizedFront.src} alt={alt} class="h-full" />
+</div>
