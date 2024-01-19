@@ -6,8 +6,8 @@ import Logo from "../images/logo.svg";
 <div
   class="h-screen w-10/12 md:w-full flex justify-center items-center mx-auto gap-20"
 >
-  <div class="absolute h-1/4 w-full top-0 bg-gold z-50 yellow-top"></div>
-  <div class="absolute h-1/4 w-full bottom-0 bg-gold z-50 yellow-bottom"></div>
+  <!-- <div class="absolute h-1/4 w-full top-0 bg-gold z-50 yellow-top"></div>
+  <div class="absolute h-1/4 w-full bottom-0 bg-gold z-50 yellow-bottom"></div> -->
   <div class="flex flex-col">
     <div class="flex flew-row gap-6 md:gap-8 justify-center items-center">
       <div class="h-28 md:h-36 flex justify-start">
@@ -97,16 +97,11 @@ import Logo from "../images/logo.svg";
     tl.from(logo, {
       opacity: 1,
       duration: 2,
+      scale: 2,
       transformOrigin: "center",
     });
 
     const tl2 = gsap.timeline();
-
-    tl2.to(".yellow-top, .yellow-bottom", {
-      height: 0,
-      delay: 1,
-      duration: 0.7,
-    });
 
     tl2.from(".title", {
       opacity: 0,
@@ -121,7 +116,6 @@ import Logo from "../images/logo.svg";
     tl2.from(".subtitle", {
       opacity: 0,
       duration: 0.7,
-      x: 100,
       ease: "sine.out",
       stagger: {
         amount: 0.3,

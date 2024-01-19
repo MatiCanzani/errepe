@@ -1,0 +1,150 @@
+---
+
+---
+
+<div class="flex w-full justify-center pb-40 trigger ">
+  <div
+    class="relative h-[500vh] flex w-full max-w-[90%] md:max-w-[80%] flex-col pin"
+  >
+    <div
+      class="slide absolute w-full h-[800px] flex flex-col justify-center items-start gap-6 leading-4 "
+    >
+      <h4
+        class="uppercase text-deep-blue text-[5rem] md:text-[8rem] xl:text-[12rem] font-compactaBT flex leading-[100%]"
+      >
+        EVENTOS
+      </h4>
+      <p
+        class="text-deep-blue text-2xl xl:text-4xl font-extrabold font-FormaDJRMicro mt-10"
+      >
+        Nuestra experiencia, trayectoria y recursos propios son los que nos
+        hacen capaz de darle servicio de producción gastronómica, mobiliaria y
+        estructural a cualquier tipo de evento, brindando un servicio calidad y
+        garantías.
+      </p>
+    </div>
+
+    <div
+      class="slide absolute w-full h-[800px] flex flex-col justify-center items-start gap-6 leading-4 "
+    >
+      <h4
+        class="uppercase text-deep-blue text-[5rem] md:text-[8rem] xl:text-[12rem] font-compactaBT flex leading-[100%]"
+      >
+        MOBILIARIOS
+      </h4>
+      <p
+        class="text-deep-blue text-2xl xl:text-4xl font-extrabold font-FormaDJRMicro mt-10"
+      >
+        Contamos con recursos como mesas de madera para banquetes, salones,
+        mobiliarios para ceremonias, pérgolas y biombos, Chill out, mobiliario
+        de forja, etc. Junto a Star Carpas, brindamos una asesoría de
+        espacialidad y diseño con una vasta trayectoria en Madrid y Buenos
+        Aires.
+      </p>
+    </div>
+
+    <div
+      class="slide absolute w-full h-[800px] flex flex-col justify-center items-start gap-6 leading-4 "
+    >
+      <h4
+        class="uppercase text-deep-blue text-[5rem] md:text-[8rem] xl:text-[12rem] font-compactaBT flex leading-[100%]"
+      >
+        PRODUCCIÓN
+      </h4>
+      <p
+        class="text-deep-blue text-2xl xl:text-4xl font-extrabold font-FormaDJRMicro mt-10"
+      >
+        Hacemos lo imposible realidad. Con nuestra alianza española Star Carpas,
+        somos capaces de producir eventos chicos, medianos y masivos, donde sea
+        y cuando sea necesario.
+      </p>
+    </div>
+    <div
+      class="slide absolute w-full h-[800px] flex flex-col justify-center items-start gap-6 leading-4 "
+    >
+      <h4
+        class="uppercase text-deep-blue text-[5rem] md:text-[8rem] xl:text-[12rem] font-compactaBT flex leading-[100%]"
+      >
+        CATERING
+      </h4>
+      <p
+        class="text-deep-blue text-2xl xl:text-4xl font-extrabold font-FormaDJRMicro mt-10"
+      >
+        Un centro de producción gastronómico propio hace posible que podamos
+        diseñar y producir servicios de catering a medida, con gran
+        reconocimiento en eventos masivos y corporativos.
+      </p>
+    </div>
+
+    <div
+      class="slide absolute w-full h-[800px] flex flex-col justify-center items-start gap-6 leading-4 "
+    >
+      <h4
+        class="uppercase text-deep-blue text-[5rem] md:text-[8rem] xl:text-[12rem] font-compactaBT flex leading-[100%]"
+      >
+        GASTRONOMÍA
+      </h4>
+      <p
+        class="text-deep-blue text-2xl xl:text-4xl font-extrabold font-FormaDJRMicro mt-10"
+      >
+        Desde administración a la implementación, brindamos soluciones
+        gastronómicas para comercios, cadenas gastronómicas, eventos
+        corporativos y eventos privados a medida.
+      </p>
+    </div>
+
+    <div
+      class="slide absolute w-full h-[800px] flex flex-col justify-center items-start gap-6 leading-4 "
+    >
+      <h4
+        class="uppercase text-deep-blue text-[5rem] md:text-[8rem] xl:text-[12rem] font-compactaBT flex leading-[100%]"
+      >
+        CONSULTING
+      </h4>
+      <p
+        class="text-deep-blue text-2xl xl:text-4xl font-extrabold font-FormaDJRMicro mt-10"
+      >
+        La trayectoria tanto en cadenas gastronómicas como servicios para las
+        principales empresas de Argentina y España, nos posicionan dando valor a
+        nuestros procesos, capaces de capacitar e idear las estructuras para tu
+        próximo proyecto.
+      </p>
+    </div>
+  </div>
+</div>
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  ScrollTrigger.create({
+    trigger: ".trigger",
+    pin: ".pin",
+    start: "top top",
+    end: "bottom bottom",
+    markers: true,
+  });
+  
+
+  let headings = gsap.utils.toArray(".slide");
+  gsap.set(headings, { yPercent: 200, opacity: 0 });
+
+  headings.forEach((heading, i) => {
+    let tl = gsap.timeline({
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".trigger",
+        start: () => `top+=${i * window.innerHeight} bottom`,
+        end: () => `top+=${(i + 1) * window.innerHeight} center`,
+        markers: true,
+        scrub: true,
+      },
+    });
+
+    tl.to(heading, { yPercent: 0, opacity: 1 })
+      .to( heading, { yPercent: -200, opacity: 0 },
+      "+=1"
+    );
+  });
+</script>
