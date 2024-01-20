@@ -1,13 +1,44 @@
----
-import { Image } from "astro:assets";
-import Logo from "../images/logo.svg";
----
+<script>
+  import { gsap } from "gsap";
+
+  const logo = document.querySelector("#svg1");
+
+  const tl = gsap.timeline();
+  document.addEventListener("DOMContentLoaded", () => {
+    tl.from(logo, {
+      opacity: 1,
+      duration: 2,
+      scale: 2,
+      transformOrigin: "center",
+    });
+
+    const tl2 = gsap.timeline();
+
+    tl2.from(".title", {
+      opacity: 0,
+      duration: 0.7,
+      y: -100,
+      ease: "sine.out",
+      delay: 1,
+      stagger: {
+        amount: 0.3,
+      },
+    });
+
+    tl2.from(".subtitle", {
+      opacity: 0,
+      duration: 0.7,
+      ease: "sine.out",
+      stagger: {
+        amount: 0.3,
+      },
+    });
+  });
+</script>
 
 <div
   class="h-screen w-10/12 md:w-full flex justify-center items-center mx-auto gap-20"
 >
-  <!-- <div class="absolute h-1/4 w-full top-0 bg-gold z-50 yellow-top"></div>
-  <div class="absolute h-1/4 w-full bottom-0 bg-gold z-50 yellow-bottom"></div> -->
   <div class="flex flex-col">
     <div class="flex flew-row gap-6 md:gap-8 justify-center items-center">
       <div class="h-28 md:h-36 flex justify-start">
@@ -68,58 +99,16 @@ import Logo from "../images/logo.svg";
         <h1
           class="uppercase text-light-gold text-8xl md:text-[10rem] title font-compactaBT leading-none"
         >
-          ERREPÉ
+          errepé
         </h1>
       </div>
     </div>
     <div class="flex justify-end items-center h-fit">
-      <h2 class="uppercase text-gold text-[1.75rem] md:text-5xl font-semibold subtitle">productora</h2>
+      <h2
+        class="uppercase text-gold text-[1.75rem] md:text-5xl font-semibold subtitle"
+      >
+        productora
+      </h2>
     </div>
   </div>
-
-  <script>
-    import { gsap } from "gsap";
-
-    const logo = document.querySelector("#svg1");
-
-    const tl = gsap.timeline({
-      defaults: {
-        ease: "circ.out",
-        opacity: 0,
-        delay: 2,
-        xPercent: 100,
-        stagger: {
-          amount: 0.3,
-        },
-      },
-    });
-
-    tl.from(logo, {
-      opacity: 1,
-      duration: 2,
-      scale: 2,
-      transformOrigin: "center",
-    });
-
-    const tl2 = gsap.timeline();
-
-    tl2.from(".title", {
-      opacity: 0,
-      duration: 0.7,
-      y: -100,
-      ease: "sine.out",
-      delay: 1,
-      stagger: {
-        amount: 0.3,
-      },
-    });
-    tl2.from(".subtitle", {
-      opacity: 0,
-      duration: 0.7,
-      ease: "sine.out",
-      stagger: {
-        amount: 0.3,
-      },
-    });
-  </script>
 </div>

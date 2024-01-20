@@ -2,42 +2,44 @@
 import { Image } from "astro:assets";
 import Bar from "../images/bar.svg";
 ---
-
 <article
   class="container w-10/12 md:w-full h-full flex justify-center items-center flex-col py-40"
   id="about"
 >
   <div class="flex items-end w-full justify-end text-end font-FormaDJRMicro">
     <div
-      class="text-light-gold text-2xl xl:text-4xl flex gap-6 xl:gap-14 flex-col grid-flow-row-dense"
+      class="text-light-gold text-xl md:text-4xl flex gap-6 xl:gap-14 flex-col grid-flow-row-dense"
     >
-      <div class="grid grid-cols-3 grid-flow-dense before:content-['']">
-        <div class="col-span-2">
+      <div class="flex justify-end">
+        <div class="flex justify-center items-center">
           <p>
-            Una empresa dedicada  <br /> a la producción gastronómica e infraestructura <br /> 
+            Una empresa dedicada <br /> a la producción gastronómica e infraestructura
+            <br />
             para eventos y comercios.
           </p>
         </div>
       </div>
-      <div class="grid grid-cols-3">
-        <div class="h-full flex justify-center w-3/6">
+      <div class="flex justify-end items-center">
+        <div
+          class="h-full max-h-64 xl:max-h-64 flex justify-start w-4/6 xl:absolute left-32"
+        >
           <Image src={Bar} alt="ERP" />
         </div>
-        <div class="col-span-2">
+        <div class="flex ustify-center items-center">
           <p>
-            Con nuestro propio centro de producción  <br /> y junto a la alianza
-            española con Star  <br /> Carpas, tenemos la capacidad de brindar , <br /> 
-            infraestructura , producción y servicio  <br /> para eventos masivos,
-            empresariales y  <br /> acciones gastronómicas, a medida de  <br />  cualquier
+            Con nuestro propio centro de producción <br /> y junto a la alianza española
+            con Star <br /> Carpas, tenemos la capacidad de brindar, <br />
+            infraestructura , producción y servicio <br /> para eventos masivos,
+            empresariales y <br /> acciones gastronómicas, a medida de <br /> cualquier
             cliente y exigencia.
           </p>
         </div>
       </div>
-      <div class="grid grid-cols-3 grid-flow-dense before:content-['']">
-        <div class="col-span-2">
+      <div class="flex justify-end ">
+        <div class="flex justify-center items-center">
           <p>
             Con más de 20 años de experiencia, <br /> trabajamos con las prinicipales
-            empresas  <br /> y eventos masivos de la Argentina.
+            empresas <br /> y eventos masivos de la Argentina.
           </p>
         </div>
       </div>
