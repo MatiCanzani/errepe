@@ -1,31 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import Logo from "../images/logo-black.svg";
+import servicesData from "../data/Services";
+import Card from "./Card.astro";
 ---
 
-<script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-  import SplitType from "split-type";
-  
-  gsap.registerPlugin(ScrollTrigger);
-
-  const split = new SplitType("h3");
-
-  gsap.from(".char", {
-    stagger: 0.5,
-    delay: 0.2,
-    opacity: 0.1,
-    duration: 0.5,
-    scrollTrigger: {
-      trigger: "#textSection",
-      once: true,
-      scrub: 1,
-      start: "top top",
-      end: "bottom center",
-    },
-  });
-</script>
 <div
   class="container w-11/12 md:w-full flex mx-auto justify-center items-end flex-col h-full pt-40"
   id="textSection"
@@ -41,22 +20,25 @@ import Logo from "../images/logo-black.svg";
         A lo que nos dedicamos:
       </h2>
     </div>
-    <div class="flex w-full justify-end">
-      <h3
-        id="services"
-        class="uppercase text-deep-blue text-[5rem] md:text-[8rem] xl:text-[12rem] font-compactaBT leading-[100%] text-end"
-      >
-        EVENTOS
-      </h3>
-    </div>
   </div>
+
   <div class="text-right h-full w-full md:w-3/4">
-    <h3
-      id="services"
-      class="uppercase text-deep-blue text-[5rem] md:text-[8rem] xl:text-[12rem] font-compactaBT flex leading-[100%]"
-    >
-      MOBILIARIOS PRODUCCIÓN CATERING GASTRONOMÍA CONSULTING
-    </h3>
+    <div id="services" class="flex flex-col text-end items-end">
+      {
+        servicesData &&
+          servicesData.map((service) => (
+            <>
+              <button
+                class="uppercase text-deep-blue text-[5rem] md:text-[8rem] xl:text-[12rem] font-compactaBT  leading-[100%] service-word touch-auto after:bg-deep-blue after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 xl:hover:after:w-full after:transition-all after:duration-300 "
+                id={service.title}
+              >
+                <span class="link-underline link-underline-black">{service.title}</span>
+              </button>
+              <Card description={service.description} id={service.id} />
+            </>
+          ))
+      }
+    </div>
     <p
       class="text-deep-blue text-2xl xl:text-4xl font-extrabold font-FormaDJRMicro mt-10"
     >
@@ -66,3 +48,73 @@ import Logo from "../images/logo-black.svg";
     </p>
   </div>
 </div>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import SplitType from "split-type";
+  import servicesData from "../data/Services";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  const split = new SplitType(".service-word");
+
+  gsap.from(".char", {
+    stagger: 0.5,
+    delay: 0.2,
+    opacity: 0.1,
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: "#textSection",
+      once: true,
+      scrub: 1,
+      start: "top top",
+      end: "bottom bottom",
+    },
+  });
+  const funcToggle = (service: { id?: string }) => {
+    const card = document.getElementById(`${service.id}`);
+    // Toggle the "hidden" class
+    card.classList.toggle("hidden");
+
+    if (!card.classList.contains("hidden")) {
+      gsap.from(card, {
+        opacity: 0,
+        y: -50,
+      });
+    }
+  };
+
+  const serviceTitles = document.querySelectorAll(".service-word");
+
+  serviceTitles.forEach((serviceTitle) => {
+    serviceTitle.addEventListener("click", () => {
+      const service = servicesData.find(
+        (s) => s.title === serviceTitle.textContent
+      );
+      funcToggle(service);
+    });
+  });
+</script>
+
+<style>
+  .link-underline {
+    border-bottom-width: 0;
+    background-image: linear-gradient(transparent, transparent),
+      linear-gradient(#fff, #fff);
+    background-size: 0 3px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s ease-in-out;
+  }
+
+  .link-underline-black {
+    background-image: linear-gradient(transparent, transparent),
+      linear-gradient(#121927, #121927);
+  }
+
+  .link-underline:hover {
+    background-size: 100% 3px;
+    background-position: 0 100%;
+  }
+</style>

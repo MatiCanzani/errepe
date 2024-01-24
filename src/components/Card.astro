@@ -1,0 +1,15 @@
+---
+const { id, description } = Astro.props;
+---
+
+<div class="hidden w-full my-0 card" id={id}>
+  <div
+    class="service h-full w-full px-4 xl:px-10 text flex justify-center items-center flex-col description"
+  >
+    <p
+      class="text-deep-blue text-xl xl:text-2xl font-extrabold font-FormaDJRMicro mt-8 mb-16 text-right"
+    >
+      {description}
+    </p>
+  </div>
+</div>
