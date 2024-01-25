@@ -1,5 +1,7 @@
-<div
-  class="h-screen w-10/12 md:w-full flex justify-center items-center mx-auto gap-20"
+
+<div class="flex justify-center flex-col h-screen w-10/12 md:w-full gap-20 md:gap-28 items-center">
+  <div
+  class=" flex justify-center items-center mx-auto"
 >
   <div class="flex flex-col">
     <div class="flex flew-row gap-6 md:gap-8 justify-center items-center">
@@ -72,7 +74,14 @@
         productora
       </h2>
     </div>
+    
+    
   </div>
+  
+</div>
+  <h2 class="uppercase text-light-gold text-2xl md:text-4xl font-compactaBT location">
+    Buenos Aires - Madrid
+  </h2>
 </div>
 
 <script>
@@ -108,6 +117,16 @@
     tl2.from(".subtitle", {
       opacity: 0,
       duration: 0.7,
+      ease: "sine.out",
+      stagger: {
+        amount: 0.3,
+      },
+    });
+
+    tl2.from(".location", {
+      opacity: 0,
+      duration: 0.7,
+      y: 100,
       ease: "sine.out",
       stagger: {
         amount: 0.3,
