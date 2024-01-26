@@ -12,7 +12,7 @@
 			"handle": "filesystem"
 		},
 		{
-			"src": "/.*",
+			"src": "^\\/_image$",
 			"dest": "render"
 		}
 	]

@@ -35,15 +35,33 @@ const optimizedBgMobile = await getImage({
     />
   </div>
   <div class="w-full min-h-full flex justify-center items-center z-10">
-    <img src={optimizedFront.src} alt={alt} width={450} class="h-auto" />
+    <img
+      src={optimizedFront.src}
+      alt={alt}
+      width="500"
+      height="1112"
+      class="h-auto"
+    />
   </div>
 </div>
 
 <div class="relative w-full h-full flex justify-center items-center md:hidden">
   <div class="absolute h-full z-0">
-    <img src={optimizedBgMobile.src} alt={alt} class="h-auto" />
+    <img
+      src={optimizedBgMobile.src}
+      alt={alt}
+      width="500"
+      height="1112"
+      class="h-auto"
+    />
   </div>
   <div class="w-full min-h-full flex justify-center items-center z-10">
-    <img src={optimizedFrontMobile.src} alt={alt} width={450} class="h-auto" />
+    <img
+      src={optimizedFrontMobile.src}
+      alt={alt}
+      width="500"
+      height="1112"
+      class="h-auto"
+    />
   </div>
 </div>
