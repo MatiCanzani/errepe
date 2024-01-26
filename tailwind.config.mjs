@@ -28,8 +28,8 @@ export default {
 
     colors: {
       "deep-blue": "#121926",
-      gold: "#FFD971",
-      "light-gold": "#FCEDCD",
+      "golden": "#FFD971",
+      "light-gÍld": "#FCEDCD",
     },
   },
   plugins: [
