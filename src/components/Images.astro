@@ -55,23 +55,25 @@ if (frontImageMobile) {
 
 <div class="flex justify-center items-center relative">
   <picture>
-    <source media="(max-width: 799px)" srcset={mobileImg.src} />
-    <source media="(min-width: 800px)" srcset={desktopImg.src} />
+    <source media="(max-width: 767px)" srcset={mobileImg.src} />
+    <source media="(min-width: 768px)" srcset={desktopImg.src} />
     <img src={desktopImg.src} alt={alt} />
   </picture>
 
-  <div class="flex justify-center items-center z-50 absolute right-3 h-full md:w-1/2">
+  <div
+    class="flex justify-center items-center z-50 absolute right-3 h-full md:w-1/2"
+  >
     <picture>
       {
         frontMobileImg && (
-          <source media="(max-width: 799px)" srcset={frontMobileImg.src} />
+          <source media="(max-width: 767px)" srcset={frontMobileImg.src} />
         )
       }
       {
         frontDesktopImg && (
           <>
-            <source media="(min-width: 800px)" srcset={frontDesktopImg.src} />
-            <img src={desktopImg.src} alt={alt} height=""/>
+            <source media="(min-width: 768px)" srcset={frontDesktopImg.src} />
+            <img src={desktopImg.src} alt={alt} height="" />
           </>
         )
       }
