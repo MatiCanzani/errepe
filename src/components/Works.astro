@@ -9,22 +9,16 @@ import Front03Mobile from "../images/works/Mobile_3_3.png";
 import Event01 from "../images/works/Desktop_1.png";
 import Event02 from "../images/works/Desktop_2.png";
 import Event03 from "../images/works/Desktop_3.png";
+import Event04 from "../images/works/Desktop_4.png";
+import Event05 from "../images/works/Desktop_5.png";
 import Event01Mobile from "../images/works/Mobile_1.png";
 import Event02Mobile from "../images/works/Mobile_2.png";
 import Event03Mobile from "../images/works/Mobile_3.png";
+import Event04Mobile from "../images/works/Mobile_4.png";
+import Event05Mobile from "../images/works/Mobile_5.png";
 ---
 
 <div class="w-full xl:w-full h-full mx-auto my-0">
-  <div class="h-full w-full">
-    <Images
-      alt="Event-01"
-      frontImage={Front01}
-      bg={Event01}
-      frontImageMobile={Front01Mobile}
-      bgMobile={Event01Mobile}
-    />
-  </div>
-  <div class="h-full w-full">
     <Images
       alt="Event-02"
       frontImage={Front02}
@@ -32,8 +26,16 @@ import Event03Mobile from "../images/works/Mobile_3.png";
       frontImageMobile={Front02Mobile}
       bgMobile={Event02Mobile}
     />
-  </div>
-  <div class="h-full w-full">
+    <Images alt="Event-04" bg={Event04} bgMobile={Event04Mobile} />
+  
+    <Images alt="Event-05" bg={Event05} bgMobile={Event05Mobile} />
+    <Images
+      alt="Event-01"
+      frontImage={Front01}
+      bg={Event01}
+      frontImageMobile={Front01Mobile}
+      bgMobile={Event01Mobile}
+    />
     <Images
       alt="Event-03"
       frontImage={Front03}
@@ -41,5 +43,4 @@ import Event03Mobile from "../images/works/Mobile_3.png";
       frontImageMobile={Front03Mobile}
       bgMobile={Event03Mobile}
     />
-  </div>
 </div>

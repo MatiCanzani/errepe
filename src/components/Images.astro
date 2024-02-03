@@ -1,67 +1,82 @@
 ---
+import type { ImageMetadata } from "astro";
 import { getImage } from "astro:assets";
 
 const { bg, alt, frontImage, bgMobile, frontImageMobile } = Astro.props;
 
-const optimizedFront = await getImage({
-  src: frontImage,
-  format: "webp",
-});
+interface Props {
+  bgMobile: string | ImageMetadata;
+  frontImageMobile?: string | ImageMetadata;
+  bg: string | ImageMetadata;
+  frontImage?: string | ImageMetadata;
+  alt: string;
+}
 
-const optimizedFrontMobile = await getImage({
-  src: frontImageMobile,
-  format: "webp",
-});
-
-const optimizedBg = await getImage({
-  src: bg,
-  format: "webp",
-});
-
-const optimizedBgMobile = await getImage({
+const mobileImg = await getImage({
   src: bgMobile,
   format: "webp",
+  width: 500,
+  height: 1112,
 });
+
+const desktopImg = await getImage({
+  src: bg,
+  format: "webp",
+  width: 2667,
+  height: 1500,
+});
+
+let frontDesktopImg: any;
+
+if (frontImage) {
+  frontDesktopImg = await getImage({
+    src: frontImage,
+    format: "webp",
+    width: 2667,
+    height: 1500,
+  });
+} else {
+  frontDesktopImg = "";
+}
+
+let frontMobileImg: any;
+
+if (frontImageMobile) {
+  frontMobileImg = await getImage({
+    src: frontImageMobile,
+    format: "webp",
+    width: 500,
+    height: 1112,
+  });
+} else {
+  frontMobileImg = "";
+}
 ---
 
-<div class="relative w-full h-full md:flex justify-center items-center hidden">
-  <div class="absolute h-full z-0">
-    <img
-      src={optimizedBg.src}
-      alt={alt}
-      class="h-auto"
-      width="2667"
-      height="1500"
-    />
-  </div>
-  <div class="w-full min-h-full flex justify-center items-center z-10">
-    <img
-      src={optimizedFront.src}
-      alt={alt}
-      width="500"
-      height="1112"
-      class="h-auto"
-    />
-  </div>
-</div>
+<div class="flex justify-center items-center relative">
+  <picture>
+    <source media="(max-width: 767px)" srcset={mobileImg.src} />
+    <source media="(min-width: 768px)" srcset={desktopImg.src} />
+    <img src={desktopImg.src} alt={alt} />
+  </picture>
 
-<div class="relative w-full h-full flex justify-center items-center md:hidden">
-  <div class="absolute h-full z-0">
-    <img
-      src={optimizedBgMobile.src}
-      alt={alt}
-      width="500"
-      height="1112"
-      class="h-auto"
-    />
-  </div>
-  <div class="w-full min-h-full flex justify-center items-center z-10">
-    <img
-      src={optimizedFrontMobile.src}
-      alt={alt}
-      width="500"
-      height="1112"
-      class="h-auto"
-    />
+  <div
+    class="flex justify-center items-center z-50 absolute right-3 h-full md:w-1/2"
+  >
+    <picture>
+      {
+        frontMobileImg && (
+          <source media="(max-width: 767px)" srcset={frontMobileImg.src} />
+        )
+      }
+      {
+        frontDesktopImg && (
+          <>
+            <source media="(min-width: 768px)" srcset={frontDesktopImg.src} />
+            <img src={desktopImg.src} alt={alt} height="" />
+          </>
+        )
+      }
+    </picture>
   </div>
 </div>
