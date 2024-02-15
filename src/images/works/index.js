@@ -1,0 +1,16 @@
+export { Front01 } from "./Desktop_1_1.png";
+export { Front02 } from "./Desktop_2_2.png";
+export { Front03 } from "./Desktop_3_3.png";
+export { Front01Mobile } from "./Mobile_1_1.png";
+export { Front02Mobile } from "./Mobile_2_2.png";
+export { Front03Mobile } from "./Mobile_3_3.png";
+export { Event01 } from "./Desktop_1.png";
+export { Event02 } from "./Desktop_2.png";
+export { Event03 } from "./Desktop_3.png";
+export { Event04 } from "./Desktop_4.png";
+export { Event05 } from "./Desktop_5.png";
+export { Event01Mobile } from "./Mobile_1.png";
+export { Event02Mobile } from "./Mobile_2.png";
+export { Event03Mobile } from "./Mobile_3.png";
+export { Event04Mobile } from "./Mobile_4.png";
+export { Event05Mobile } from "./Mobile_5.png";
