@@ -24,6 +24,15 @@ export default {
         "event-2-mobile": "url('/src/images/works/Mobile_2.png')",
         "event-3-mobile": "url('/src/images/works/Mobile_3.png')",
       },
+      animation: {
+        'infinite-scroll': 'infinite-scroll 25s linear infinite',
+      },
+      keyframes: {
+        'infinite-scroll': {
+          from: { transform: 'translateX(0)' },
+          to: { transform: 'translateX(-100%)' },
+        }
+      }                    
     },
 
     colors: {
@@ -34,4 +43,3 @@ export default {
   },
   plugins: [require("flowbite/plugin")],
 };
-``;

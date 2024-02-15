@@ -1,22 +1,11 @@
 ---
 import { Image } from "astro:assets";
-import Almundo from "../images/clients/almundo.svg";
-import BI from "../images/clients/bi.svg";
-import Andreani from "../images/clients/andreani.svg";
-import Lolla from "../images/clients/Lolla.svg";
-import KC from "../images/clients/kc.svg";
-import Carp from "../images/clients/carp.svg";
-import Oracle from "../images/clients/oracle.svg";
-import Pariscrepas from "../images/clients/paricrepas.svg";
-import Rocky from "../images/clients/rockypoint.svg";
-import Santader from "../images/clients/santander.svg";
-import Topper from "../images/clients/topper.svg";
-import Zurich from "../images/clients/zurich.svg";
+import Marquee from './Marquee.jsx'
 ---
 
 <div class="w-full">
   <div
-    class="container w-10/12 xl:w-full h-full flex mx-auto flex-col py-20 md:py-40"
+    class="container w-10/12 xl:w-full h-full flex mx-auto flex-col py-20"
   >
     <div
       class="flex w-full justify-end flex-col-reverse xl:flex-row gap-8 py-10 xl:py-40 items-end"
@@ -36,8 +25,8 @@ import Zurich from "../images/clients/zurich.svg";
         </h3>
       </div>
     </div>
-
-    <div
+<Marquee client:load />
+    <!-- <div
       class="grid grid-cols-2 gap-24 md:gap-32 xl:w-4/5 mx-auto my-4 xl:my-40"
     >
       <div class="flex items-center justify-center">
@@ -126,6 +115,5 @@ import Zurich from "../images/clients/zurich.svg";
           class="max-h-20 xl:max-h-36"
         />
       </div>
-    </div>
+    </div> -->
   </div>
-</div>
