@@ -1,14 +1,24 @@
 ---
 import { Image } from "astro:assets";
 import Bar from "../images/bar.svg";
+import Logo from "../images/logo.svg";
 ---
+
 <article
-  class="container w-10/12 md:w-full h-full flex justify-center items-center flex-col py-40"
-  id="about"
+  class="container w-11/12 md:w-full flex mx-auto justify-center items-end flex-col h-full py-20 relative"
+  id="textSection"
 >
+  <div class="w-full flex justify-end my-4 xl:my-20">
+    <p
+      class="uppercase text-black text-8xl md:text-[27rem] opacity-10 font-compactaBT leading-none mr-60"
+    >
+      errepé
+    </p>
+    <Image src={Logo} alt="ERP" class="fill-gold"/>
+  </div>
   <div class="flex items-end w-full justify-end text-end font-FormaDJRMicro">
     <div
-      class="text-light-gold text-xl md:text-4xl flex gap-6 xl:gap-14 flex-col grid-flow-row-dense"
+      class="text-black text-xl md:text-4xl flex gap-6 xl:gap-14 flex-col grid-flow-row-dense"
     >
       <div class="flex justify-end">
         <div class="flex justify-center items-center">

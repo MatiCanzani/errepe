@@ -39,6 +39,7 @@ export default {
       "deep-blue": "#121926",
       gold: "#FFD971",
       "light-gold": "#FCEDCD",
+      "brown-1": "#D3B98D",
     },
   },
   plugins: [require("flowbite/plugin")],
