@@ -25,14 +25,18 @@ export default {
         "event-3-mobile": "url('/src/images/works/Mobile_3.png')",
       },
       animation: {
-        'infinite-scroll': 'infinite-scroll 25s linear infinite',
+        "infinite-scroll": "infinite-scroll 25s linear infinite",
       },
       keyframes: {
-        'infinite-scroll': {
-          from: { transform: 'translateX(0)' },
-          to: { transform: 'translateX(-100%)' },
-        }
-      }                    
+        "infinite-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+      },
+      dropShadow: {
+        '3xl': '0 25px 25px rgba(0, 0, 0, 0.5)',
+        '4xl': '0 10px 10px rgba(0, 0, 0, 0.5)',
+      }
     },
 
     colors: {

@@ -1,13 +1,20 @@
 ---
-const { id, description } = Astro.props;
+import { Picture } from "astro:assets";
+
+const { id, description, imageUrl } = Astro.props;
 ---
 
-<div class="hidden w-full lg:w-4/6 my-0 card" id={id}>
+<div class="hidden w-full my-0 card" id={id}>
   <div
-    class="service h-full w-full px-4 xl:px-10 text flex justify-center items-center flex-col description"
+    class="service h-full w-full pt-16 px-4 xl:px-10 text flex justify-between gap-10 lg:gap-16 items-center flex-col lg:flex-row description"
   >
+    <Picture
+      src={imageUrl}
+      alt={id}
+      class="md:min-w-72 rounded-md drop-shadow-4xl lg:drop-shadow-3xl"
+    />
     <p
-      class="text-deep-blue text-xl xl:text-2xl font-extrabold font-FormaDJRMicro mt-8 mb-16 text-right"
+      class="text-deep-blue text-xl xl:text-2xl font-extrabold font-FormaDJRMicro my-8 text-right lg:pl-10"
     >
       {description}
     </p>

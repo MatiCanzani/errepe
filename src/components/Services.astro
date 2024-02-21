@@ -41,7 +41,8 @@ import Card from "./Card.astro";
                   {service.title}
                 </span>
               </button>
-              <Card description={service.description} id={service.id} />
+              {console.log('service.image', service.image)}
+              <Card description={service.description} id={service.id} imageUrl={service.image}/>
             </>
           ))
       }
