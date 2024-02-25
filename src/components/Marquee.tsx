@@ -12,6 +12,9 @@ import Rocky from "../images/clients/rockypoint.svg?url";
 import Santader from "../images/clients/santander.svg?url";
 import Topper from "../images/clients/topper.svg?url";
 import Zurich from "../images/clients/zurich.svg?url";
+import Dakar from "../images/clients/dakar.svg?url";
+import AirEuropa from "../images/clients/aireuropa.svg?url";
+import Toyota from "../images/clients/toyota.svg?url";
 
 interface Logo {
   key: string;
@@ -96,6 +99,24 @@ const Marquee: React.FC = () => {
       src: Zurich,
       alt: "Zurich Logo",
     },
+    {
+      key: "Dakar",
+      name: "Dakar",
+      src: Dakar,
+      alt: "Dakar Logo",
+    },
+    {
+      key: "AirEuropa",
+      name: "AirEuropa",
+      src: AirEuropa,
+      alt: "AirEuropa Logo",
+    },
+    {
+      key: "Toyota",
+      name: "Toyota",
+      src: Toyota,
+      alt: "Toyota Logo",
+    },
   ];
 
   useEffect(() => {
@@ -103,7 +124,7 @@ const Marquee: React.FC = () => {
       if (!logosRef.current) return;
       const ul = logosRef.current;
       const clone = ul.cloneNode(true);
-      if (!(clone instanceof HTMLElement)) return; // Check if clone is an HTMLElement
+      if (!(clone instanceof HTMLElement)) return;
       clone.setAttribute("aria-hidden", "true");
       ul.parentElement.insertBefore(clone, ul.nextSibling);
     };
@@ -124,8 +145,10 @@ const Marquee: React.FC = () => {
             <img
               src={logo.src}
               alt={logo.alt}
-              width="250"
-              className="max-h-16 xl:max-h-36 max-w-[200px]"
+              width={200}
+              height={200}
+              className="max-h-20 xl:max-h-36 max-w-[200px]
+              "
             />
           </li>
         ))}
