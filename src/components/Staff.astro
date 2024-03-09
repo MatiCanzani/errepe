@@ -1,0 +1,114 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../images/logo-black.svg";
+import EduardoCarballo from "../images/staff/Eduardo_Carballo.png";
+import HernanMenendez from "../images/staff/Hernán_Menendez.png";
+import LeandroMambretti from "../images/staff/Leandro_Mambretti.png";
+import PabloJimenez from "../images/staff/Pablo_Jiménez.png";
+
+const staffData = [
+  {
+    imageSrc: EduardoCarballo,
+    altText: "Eduardo Carballo",
+    name: "Eduardo Carballo",
+  },
+
+  {
+    imageSrc: HernanMenendez,
+    altText: "Hernan Menendez",
+    name: "Hernan Menendez",
+  },
+
+  {
+    imageSrc: LeandroMambretti,
+    altText: "Leandro Mambretti",
+    name: "Leandro Mambretti",
+  },
+
+  {
+    imageSrc: PabloJimenez,
+    altText: "Pablo Jimenez",
+    name: "Pablo Jimenez",
+  },
+];
+---
+
+<div class="w-full">
+  <div class="container w-10/12 xl:w-full h-full flex mx-auto flex-col py-20">
+    <div class="w-full flex justify-between items-center my-4 xl:my-20">
+      <p
+        class="uppercase text-black text-9xl md:text-[27rem] opacity-10 font-compactaBT leading-none"
+      >
+        errepé
+      </p>
+      <Image src={Logo} alt="ERP" class="w-12 md:w-24" />
+    </div>
+  </div>
+  <div class="flex w-full justify-center xl:flex-row gap-8 pb-20 items-center">
+    <h4
+      class="uppercase text-deep-blue text-6xl md:text-[8rem] xl:text-[10rem] text-end font-compactaBT leading-[90%]"
+    >
+      nuestro equipo
+    </h4>
+  </div>
+  <div
+    class="h-full flex-col md:flex-row w-full flex justify-center items-center mx-auto pb-20 gap-20"
+  >
+    <div
+      class="h-full flex-col md:flex-row w-full flex justify-center items-center mx-auto pb-20 gap-20"
+    >
+      {
+        staffData.map((member) => (
+          <div class="flex justify-center items-center gap-6 flex-col">
+            <Image
+              src={member.imageSrc}
+              alt={member.altText}
+              class="staff-image"
+              id="staff"
+            />
+            <p class="uppercase text-center text-black text-lg font-semibold">
+              {member.name}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  #staff {
+    --s: 200px; /* image size */
+    --b: 2px; /* border thickness */
+    --c: #14141427; /* border color */
+    --cb: #14141427; /* background color */
+    --f: 1; /* initial scale */
+
+    max-width: var(--s);
+
+    padding-top: calc(var(--s) / 5);
+    cursor: pointer;
+    --_g: 40% / calc(100% / var(--f)) 100% no-repeat content-box;
+    --_o: calc((1 / var(--f) - 1) * var(--s) / 2 - var(--b));
+    background: radial-gradient(
+        circle closest-side,
+        var(--cb) calc(99% - var(--b)),
+        var(--c) calc(100% - var(--b)) 99%,
+        #0000
+      )
+      var(--_g);
+    -webkit-mask:
+      linear-gradient(#000 0 0) no-repeat 50% calc(1px - var(--_o)) /
+        calc(100% / var(--f) - 2 * var(--b) - 2px) 50%,
+      radial-gradient(circle closest-side, #000 99%, #0000) var(--_g);
+    transform: scale(var(--f));
+    transition: 0.5s;
+  }
+  #staff:hover {
+    --f: 1.25;
+  }
+
+  #staff @media (max-width: 575.98px) {
+    max-width: 200px;
+  }
+</style>
