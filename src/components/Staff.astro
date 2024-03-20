@@ -52,27 +52,23 @@ const staffData = [
     </h4>
   </div>
   <div
-    class="h-full flex-col md:flex-row w-full flex justify-center items-center mx-auto pb-20 gap-20"
+    class="h-full flex-col md:flex-wrap md:gap-44 w-full md:flex-row lg:gap-20 flex justify-center items-center mx-auto pb-20 gap-20"
   >
-    <div
-      class="h-full flex-col md:flex-row w-full flex justify-center items-center mx-auto pb-20 gap-20"
-    >
-      {
-        staffData.map((member) => (
-          <div class="flex justify-center items-center gap-6 flex-col">
-            <Image
-              src={member.imageSrc}
-              alt={member.altText}
-              class="staff-image"
-              id="staff"
-            />
-            <p class="uppercase text-center text-black text-lg font-semibold">
-              {member.name}
-            </p>
-          </div>
-        ))
-      }
-    </div>
+    {
+      staffData.map((member) => (
+        <div class="flex justify-center items-center gap-6 flex-col">
+          <Image
+            src={member.imageSrc}
+            alt={member.altText}
+            class="staff-image"
+            id="staff"
+          />
+          <p class="uppercase text-center text-black text-lg font-semibold">
+            {member.name}
+          </p>
+        </div>
+      ))
+    }
   </div>
 </div>
 
@@ -108,7 +104,9 @@ const staffData = [
     --f: 1.25;
   }
 
-  #staff @media (max-width: 575.98px) {
-    max-width: 200px;
+  @media (max-width: 575.98px) {
+    .staff {
+      max-width: 200px;
+    }
   }
 </style>

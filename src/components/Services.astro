@@ -11,11 +11,11 @@ import Card from "./Card.astro";
 >
   <div class="w-full flex justify-between items-center my-4 xl:my-20">
     <p
-      class="uppercase text-black text-9xl md:text-[27rem] opacity-10 font-compactaBT leading-none "
+      class="uppercase text-black text-9xl md:text-[27rem] opacity-10 font-compactaBT leading-none"
     >
       errepé
     </p>
-    <Image src={Logo} alt="ERP" class="w-12 md:w-24"/>
+    <Image src={Logo} alt="ERP" class="w-12 md:w-24" />
   </div>
   <div
     class="flex text-right xl:mr-12 xl:absolute xl:top-[49rem] xl:right-[30rem]"
@@ -41,7 +41,11 @@ import Card from "./Card.astro";
                   {service.title}
                 </span>
               </button>
-              <Card description={service.description} id={service.id} imageUrl={service.image}/>
+              <Card
+                description={service.description}
+                id={service.id}
+                imageUrl={service.image}
+              />
             </>
           ))
       }
@@ -63,29 +67,26 @@ import Card from "./Card.astro";
     <p>Descarga Nuestro Catálogos</p>
 
     <div class="flex justify-space gap-4 font-extrabold">
-      <a
-        href="/catalogos/Mobiliario Chill out - Coctail - complementos deco_compressed.pdf"
-        download
-        class="group transition duration-300"
-        >Mobiliario Chill Out<span
+      <a href="/Catalogos/Carpas/Carpas.zip" download class="group transition duration-300"
+        >Carpas<span
           class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black"
         ></span></a
       >
       -
       <a
-        href="/catalogos/Catálogos Mesas de Banquete_compressed.pdf"
+        href="/Catalogos/Iluminación/Iluminación.zip"
         download
         class="group transition duration-300"
-        >Mesas de Banquete<span
+        >Iluminación<span
           class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black"
         ></span></a
       >
       -
       <a
-        href="/catalogos/Dossier Pérgola Cubo_compressed.pdf"
+        href="/Catalogos/Mobiliarios/Mobiliarios.zip"
         download
         class="group transition duration-300"
-        >Pérgola Cubo<span
+        >Mobiliarios<span
           class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black"
         ></span></a
       >
