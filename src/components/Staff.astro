@@ -5,7 +5,8 @@ import EduardoCarballo from "../images/staff/Eduardo_Carballo.png";
 import HernanMenendez from "../images/staff/Hernán_Menendez.png";
 import LeandroMambretti from "../images/staff/Leandro_Mambretti.png";
 import PabloJimenez from "../images/staff/Pablo_Jiménez.png";
-
+import RitaJimenezAlosno from "../images/staff/Rita_Jimenez_Alonso.png";
+import GonzaloRipoll from "../images/staff/Gonzalo_Ripoll.png";
 const staffData = [
   {
     imageSrc: EduardoCarballo,
@@ -24,11 +25,20 @@ const staffData = [
     altText: "Leandro Mambretti",
     name: "Leandro Mambretti",
   },
-
   {
     imageSrc: PabloJimenez,
     altText: "Pablo Jimenez",
     name: "Pablo Jimenez",
+  },
+  {
+    imageSrc: RitaJimenezAlosno,
+    altText: "Rita Jimenez Alosno",
+    name: "Rita Jimenez Alosno",
+  },
+  {
+    imageSrc: GonzaloRipoll,
+    altText: "Gonzalo Ripoll",
+    name: "Gonzalo Ripoll",
   },
 ];
 ---
@@ -56,7 +66,7 @@ const staffData = [
   >
     {
       staffData.map((member) => (
-        <div class="flex justify-center items-center gap-6 flex-col">
+        <div class="flex justify-center items-center gap-6 flex-col w-2/12">
           <Image
             src={member.imageSrc}
             alt={member.altText}
