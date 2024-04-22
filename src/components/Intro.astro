@@ -4,12 +4,11 @@ import ImageTop from "../images/image_top.png";
 import ImageBottom from "../images/image_bottom.png";
 ---
 
-<div class="w-full bg-brown-1 ">
-  <div class="">
-    <Image src={ImageTop} alt="Coctail image" class="object-contain" />
-  </div>
+<div
+  class="w-full bg-brown-1 flex justify-center flex-col items-center min-h-dvh"
+>
   <div
-    class="flex justify-center flex-col max-h-48 w-full gap-12 md:gap-28 items-center relative z-50"
+    class="flex justify-center flex-col max-h-48 w-full gap-8 items-center z-50 md:absolute md:mt-[20%] md:top-0"
   >
     <div class="flex justify-center items-center mx-auto">
       <div class="flex flex-col">
@@ -74,7 +73,7 @@ import ImageBottom from "../images/image_bottom.png";
             errepé
           </h1>
         </div>
-        <div class="flex justify-end items-center h-fit">
+        <div class="flex justify-center items-center h-fit">
           <h2
             class="uppercase text-gold text-[1.75rem] md:text-5xl font-semibold subtitle"
           >
@@ -83,13 +82,11 @@ import ImageBottom from "../images/image_bottom.png";
         </div>
       </div>
     </div>
-    <div class="flex flex-row location">
-      <h2 class="uppercase text-black text-2xl md:text-4xl font-compactaBT">
+    <div class="flex flex-row location text-center">
+      <h2 class="uppercase text-black text-xl md:text-3xl font-compactaBT">
         Buenos Aires -
       </h2>
-      <h2
-        class="uppercase text-black text-2xl md:text-4xl font-compactaBT pl-2"
-      >
+      <h2 class="uppercase text-black text-xl md:text-3xl font-compactaBT pl-2">
         <a
           href="https://star-carpas.com/"
           target="_blank"
@@ -103,7 +100,7 @@ import ImageBottom from "../images/image_bottom.png";
       </h2>
     </div>
   </div>
-  <div class="">
+  <div class="absolute bottom-0 md:relative md:mt-[25%]">
     <Image src={ImageBottom} alt="Night Tent event image" />
   </div>
 </div>

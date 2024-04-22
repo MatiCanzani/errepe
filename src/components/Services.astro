@@ -9,30 +9,21 @@ import Card from "./Card.astro";
   class="container w-11/12 md:w-full flex mx-auto justify-center items-end flex-col h-full py-20 relative"
   id="textSection"
 >
-  <div class="w-full flex justify-between items-center my-4 xl:my-20">
-    <p
-      class="uppercase text-black text-9xl md:text-[27rem] opacity-10 font-compactaBT leading-none"
-    >
-      errepé
-    </p>
-    <Image src={Logo} alt="ERP" class="w-12 md:w-24" />
-  </div>
   <div
-    class="flex text-right xl:mr-12 xl:absolute xl:top-[49rem] xl:right-[30rem]"
+    class="w-full flex flex-col justify-between items-start my-4 md:flex-row xl:my-20"
   >
-    <h2
-      class="flex-grow text-deep-blue text-2xl md:text-4xl font-FormaDJRMicro font-extrabold py-4 mb-10 xl:mb-0"
-    >
-      A lo que nos dedicamos:
-    </h2>
-  </div>
-
-  <div class="text-right h-full w-full">
-    <div id="services" class="flex flex-col text-end items-end grow">
-      {
-        servicesData &&
-          servicesData.map((service) => (
-            <>
+    <div class="text-center md:text-left w-full md:w-2/6">
+      <h2
+        class="text-deep-blue text-2xl md:text-4xl font-FormaDJRMicro font-extrabold pt-[105px] w-full text-right mb-10 xl:mb-0 md:ml-[50%]"
+      >
+        A lo que nos dedicamos:
+      </h2>
+    </div>
+    <div class="text-right w-full md:w-4/6">
+      <div id="services" class="flex flex-col text-end items-end grow">
+        {
+          servicesData &&
+            servicesData.map((service) => (
               <button
                 class="uppercase text-deep-blue text-[5rem] md:text-[8rem] xl:text-[10rem] font-compactaBT leading-[100%] service-word touch-auto after:bg-deep-blue after:absolute after:h-1 after:w-0 after:bottom-0 after:left-0 xl:hover:after:w-full after:transition-all after:duration-300"
                 id={service.title}
@@ -41,18 +32,13 @@ import Card from "./Card.astro";
                   {service.title}
                 </span>
               </button>
-              <Card
-                description={service.description}
-                id={service.id}
-                imageUrl={service.image}
-              />
-            </>
-          ))
-      }
+            ))
+        }
+      </div>
     </div>
   </div>
 
-  <div class="w-full flex flex-end text-right">
+  <div class="text-right h-full w-full">
     <p
       class="text-deep-blue text-xl xl:text-4xl font-extrabold font-FormaDJRMicro mt-10 pl-[30%]"
     >
@@ -60,45 +46,49 @@ import Card from "./Card.astro";
       producción gastronómico propio, que brinda serivicio tanto para eventos
       como para comercios.
     </p>
-  </div>
-  <div
-    class="text-right gap-4 flex justify-center flex-col text-deep-blue text-xl xl:text-3xl font-extrabold font-FormaDJRMicro mt-10"
-  >
-    <p>Descarga Nuestro Catálogos</p>
-
-    <div class="flex justify-space gap-4 font-extrabold">
-      <a href="/Catalogos/Carpas/Carpas.zip" download class="group transition duration-300"
-        >Carpas<span
-          class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black"
-        ></span></a
-      >
-      -
-      <a
-        href="/Catalogos/Iluminación/Iluminación.zip"
-        download
-        class="group transition duration-300"
-        >Iluminación<span
-          class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black"
-        ></span></a
-      >
-      -
-      <a
-        href="/Catalogos/Mobiliarios/Mobiliarios.zip"
-        download
-        class="group transition duration-300"
-        >Mobiliarios<span
-          class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black"
-        ></span></a
-      >
-      -
-      <a
-      href="../../public/Catalogos/Arreglos Florales/Catalogo de Arreglos Florales.pdf"
-      download
-      class="group transition duration-300"
-      >Arreglos Florales<span
-        class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black"
-      ></span></a
+    <div
+      class="text-right gap-4 flex justify-center flex-col text-deep-blue text-xl xl:text-3xl font-extrabold font-FormaDJRMicro mt-10"
     >
+      <p class="font-bold italic">Descarga Nuestro Catálogos</p>
+      <div
+        class="flex flex-col md:flex-row justify-end gap-4 font-extrabold text-right"
+      >
+        <a
+          href="/Catalogos/Carpas/Carpas.zip"
+          download
+          class="group transition duration-300"
+          >Carpas<span
+            class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black"
+          ></span></a
+        >
+        <span class="hidden md:block">-</span>
+        <a
+          href="/Catalogos/Iluminación/Iluminación.zip"
+          download
+          class="group transition duration-300"
+          >Iluminación<span
+            class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black"
+          ></span></a
+        >
+        <span class="hidden md:block">-</span>
+        <a
+          href="/Catalogos/Mobiliarios/Mobiliarios.zip"
+          download
+          class="group transition duration-300"
+          >Mobiliarios<span
+            class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black"
+          ></span></a
+        >
+        <span class="hidden md:block">-</span>
+        <a
+          href="../../public/Catalogos/Arreglos Florales/Catalogo de Arreglos Florales.pdf"
+          download
+          class="group transition duration-300"
+          >Arreglos Florales<span
+            class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-black"
+          ></span></a
+        >
+      </div>
     </div>
   </div>
 </div>
