@@ -1,15 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require("tailwindcss/defaultTheme");
 
-export default {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+module.exports = {
+  content: [
+    "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
+    "./components/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"
+  ],
   theme: {
     extend: {
       fontFamily: {
-        chalet: [
-          "ChaletNewYorkNineteenSeventy",
-          ...defaultTheme.fontFamily.sans,
-        ],
+        chalet: ["ChaletNewYorkNineteenSeventy", ...defaultTheme.fontFamily.sans],
         Cinematografica: ["Cinematografica", ...defaultTheme.fontFamily.sans],
         Impact: ["Impact", ...defaultTheme.fontFamily.sans],
         MyriadPro: ["MyriadPro", ...defaultTheme.fontFamily.sans],
@@ -38,7 +38,6 @@ export default {
         '4xl': '0 10px 10px rgba(0, 0, 0, 0.5)',
       }
     },
-
     colors: {
       "deep-blue": "#121926",
       gold: "#FFD971",

@@ -4,9 +4,9 @@ import { Picture } from "astro:assets";
 const { id, description, imageUrl } = Astro.props;
 ---
 
-<div class="hidden w-full my-0 card" id={id}>
+<div class="hidden w-full card" id={id}>
   <div
-    class="service h-full w-full pt-16 px-4 xl:px-10 text flex justify-between gap-10 lg:gap-16 items-center flex-col lg:flex-row description"
+    class="service h-full w-full py-16 px-4 text flex justify-between gap-10 lg:gap-16 items-center flex-col lg:flex-row description"
   >
     <Picture
       src={imageUrl}
