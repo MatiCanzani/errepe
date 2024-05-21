@@ -1,16 +1,7 @@
 ---
-import Images from "./Images.astro";
 import { Image } from "astro:assets";
-import Front01 from "../images/works/Desktop_1_1.png";
-import Front02 from "../images/works/Desktop_2_2.png";
-import Front03 from "../images/works/Desktop_3_3.png";
-import Front01Mobile from "../images/works/Mobile_1_1.png";
-import Front02Mobile from "../images/works/Mobile_2_2.png";
-import Front03Mobile from "../images/works/Mobile_3_3.png";
 import Event01 from "../images/works/Desktop_1.png";
 import Event02 from "../images/works/Desktop_2.png";
-import Event03 from "../images/works/Desktop_3.png";
-import Event04 from "../images/works/Desktop_4.png";
 import Event05 from "../images/works/Desktop_5.png";
 import Front1 from "../images/works/Desktop-2-2-2.png";
 import Front3 from "../images/works/Desktop_1_1_1.png";
@@ -62,15 +53,18 @@ const images = [
 
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.from(".box", {
-    scrollTrigger: ".works",
-    opacity: 0,
-    yPercent: 10,
-    ease: "power2",
-    duration: 1,
-    stagger: 0.5,
-    start: "top =+300",
-    end: "bottom bottom",
-    markers: true,
+  document.querySelectorAll(".box").forEach((box, index) => {
+    gsap.from(box, {
+      opacity: 0,
+      yPercent: 10,
+      ease: "power2",
+      duration: 1,
+      scrollTrigger: {
+        trigger: box,
+        start: "top 90%",
+        end: "bottom 20%",
+      },
+      delay: index * 0.2,
+    });
   });
 </script>
