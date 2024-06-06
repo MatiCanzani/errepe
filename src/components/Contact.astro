@@ -1,39 +1,51 @@
-<div class="h-full w-8/12 md:w-full flex justify-center items-center mx-auto py-40">
-  <div class="flex flex-col gap-12 justify-around items-center">
+---
+import Form  from "./Forms.astro";
+---
+
+<div class="h-full w-full flex justify-center items-center py-40">
+  <div class="flex w-full flex-col gap-12 justify-around items-center">
     <h4
       class="uppercase text-light-gold text-6xl md:text-[8rem] font-compactaBT"
     >
       contactanos
     </h4>
-    <h5 class="uppercase text-gold text-2xl md:text-5xl font-semibold">
-      +54 9 11 24059526
-    </h5>
-
-    <div class="flex flex-row">
-      <h5
-        class="uppercase text-light-gold text-2xl md:text-4xl font-compactaBT"
-      >
-        Buenos Aires -
-      </h5>
-      <h5
-        class="uppercase text-light-gold text-2xl md:text-4xl font-compactaBT pl-2"
-      >
+    <div class="flex flex-col md:flex-row mt-4 md:mt-8 justify-center gap-10 w-10/12">
+      <Form />
+      <div class="flex justify-center flex-col items-center gap-8 mt-4 md:mt-0 ">
         <a
-          href="https://star-carpas.com/"
-          target="_blank"
-          class="group transition duration-300"
+          href="tel:+5491124059526"
+          class="uppercase text-gold text-xl md:text-3xl font-semibold"
         >
-          Madrid
-          <span
-            class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-gold"
-          ></span>
+          <h5>+54 9 11 24059526</h5>
         </a>
-      </h5>
+
+        <div class="flex flex-row">
+          <h5
+            class="uppercase text-light-gold text-xl md:text-3xl font-compactaBT tracking-wider"
+          >
+            Buenos Aires -
+          </h5>
+          <h5
+            class="uppercase text-light-gold text-xl md:text-3xl font-compactaBT pl-2 tracking-wider"
+          >
+            <a
+              href="https://star-carpas.com/"
+              target="_blank"
+              class="group transition duration-300"
+            >
+              Madrid
+              <span
+                class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-gold"
+              ></span>
+            </a>
+          </h5>
+        </div>
+        <a
+          href="mailto:info@errepeproductora.com"
+          class="uppercase text-light-gold text-xl md:text-3xl font-compactaBT pl-2 tracking-wider cursor-pointer"
+          >info@errepeproductora.com</a
+        >
+      </div>
     </div>
-    <a
-      href="mailto:info@errepeproductora.com"
-      class="uppercase text-light-gold text-2xl md:text-4xl font-compactaBT pl-2"
-      >info@errepeproductora.com</a
-    >
   </div>
 </div>

@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import ImageTop from "../images/image_top.png";
 import ImageBottom from "../images/image_bottom.png";
 ---
 
@@ -100,8 +99,8 @@ import ImageBottom from "../images/image_bottom.png";
       </h2>
     </div>
   </div>
-  <div class="absolute bottom-0 md:relative md:mt-[25%]">
-    <Image src={ImageBottom} alt="Night Tent event image" />
+  <div class="absolute bottom-0 md:relative md:mt-[25%] w-full">
+    <Image src={ImageBottom} alt="Night Tent event image" class="w-full" />
   </div>
 </div>
 <script>
