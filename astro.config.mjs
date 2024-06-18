@@ -3,12 +3,13 @@ import vercel from "@astrojs/vercel/serverless";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 
+import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
   output: "hybrid",
   adapter: vercel(),
-  integrations: [tailwind(), react()],
+  integrations: [tailwind(), react(), partytown()],
   buildOptions: {
     loaders: {
       ".js": "esbuild",
