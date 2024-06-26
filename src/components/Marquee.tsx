@@ -3,7 +3,7 @@ import React, { useRef, useEffect } from "react";
 import Almundo from "../images/clients/almundo.svg?url";
 import BI from "../images/clients/bi.svg?url";
 import Andreani from "../images/clients/andreani.svg?url";
-import Lolla from "../images/clients/Lolla.svg?url";
+import Lolla from "../images/clients/lolla.svg";
 import KC from "../images/clients/kc.svg?url";
 import Carp from "../images/clients/carp.svg?url";
 import Oracle from "../images/clients/oracle.svg?url";
