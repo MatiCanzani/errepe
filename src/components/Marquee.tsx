@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 
 import Almundo from "../images/clients/almundo.svg?url";
 import BI from "../images/clients/bi.svg?url";
-import Andreani from "../images/clients/andreani.svg?url";
+// import Andreani from "../images/clients/andreani.svg?url";
 import Lolla from "../images/clients/lolla.svg?url";
 import KC from "../images/clients/kc.svg?url";
 import Carp from "../images/clients/carp.svg?url";
@@ -39,12 +39,12 @@ const Marquee: React.FC = () => {
       src: BI,
       alt: "BI Logo",
     },
-    {
-      key: "Andreani",
-      name: "Andreani",
-      src: Andreani,
-      alt: "Andreani Logo",
-    },
+    // {
+    //   key: "Andreani",
+    //   name: "Andreani",
+    //   src: Andreani,
+    //   alt: "Andreani Logo",
+    // },
     {
       key: "Lolla",
       name: "Lolla",
