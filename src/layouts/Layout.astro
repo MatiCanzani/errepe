@@ -6,13 +6,17 @@ interface Props {
 const { title } = Astro.props;
 
 import { ViewTransitions } from "astro:transitions";
-import GtagAdds from '../components/GtagAdds.astro'
-import GtagAw from '../components/GtagAw.astro'
+import GtagAdds from "../components/GtagAdds.astro";
+import GtagAw from "../components/GtagAw.astro";
+import Gtm from "../components/Gtm.astro";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
+    <GtagAdds />
+    <GtagAw />
+    <Gtm />
     <meta charset="UTF-8" />
     <meta
       name="description"
@@ -23,12 +27,19 @@ import GtagAw from '../components/GtagAw.astro'
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="generator" content={Astro.generator} />
-    <GtagAdds />
-    <GtagAw />
     <title>{title}</title>
     <ViewTransitions />
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-5C8MK5S3"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
     <slot />
     <style is:global>
       :root {
