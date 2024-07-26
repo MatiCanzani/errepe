@@ -1,5 +1,8 @@
 ---
-import Form  from "./Forms.astro";
+import Form from "./Forms.astro";
+import Instagram from "../images/instagram.svg";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 ---
 
 <div class="h-full w-full flex justify-center items-center py-40">
@@ -9,24 +12,26 @@ import Form  from "./Forms.astro";
     >
       contactanos
     </h4>
-    <div class="flex flex-col md:flex-row mt-4 md:mt-8 justify-center gap-10 w-10/12">
+    <div
+      class="flex flex-col md:flex-row mt-4 md:mt-8 justify-center gap-10 w-10/12"
+    >
       <Form />
-      <div class="flex justify-center flex-col items-center gap-8 mt-4 md:mt-0 ">
+      <div class="flex justify-center flex-col items-center gap-8 mt-4 md:mt-0">
         <a
           href="tel:+5491124059526"
-          class="uppercase text-gold text-xl md:text-2xl  font-semibold"
+          class="uppercase text-gold text-xl md:text-2xl font-semibold"
         >
           <h5>+54 9 11 24059526</h5>
         </a>
 
         <div class="flex flex-row">
           <h5
-            class="uppercase text-light-gold text-xl md:text-2xl  font-compactaBT tracking-wider"
+            class="uppercase text-light-gold text-xl md:text-2xl font-compactaBT tracking-wider"
           >
             Buenos Aires -
           </h5>
           <h5
-            class="uppercase text-light-gold text-xl md:text-2xl  font-compactaBT pl-2 tracking-wider"
+            class="uppercase text-light-gold text-xl md:text-2xl font-compactaBT pl-2 tracking-wider"
           >
             <a
               href="https://star-carpas.com/"
@@ -42,9 +47,18 @@ import Form  from "./Forms.astro";
         </div>
         <a
           href="mailto:info@errepeproductora.com"
-          class="uppercase text-light-gold text-xl md:text-2xl  font-compactaBT pl-2 tracking-wider cursor-pointer"
+          class="uppercase text-light-gold text-xl md:text-2xl font-compactaBT pl-2 tracking-wider cursor-pointer"
           >info@errepeproductora.com</a
         >
+        <div class="w-full flex justify-center gap-3 items-center flex-row">
+          <span
+            class="text-light-gold text-xl md:text-2xl font-compactaBT pl-2 tracking-wider"
+            >NUESTRO INTAGRAM</span
+          >
+          <a href="https://www.instagram.com/errepeproductora">
+            <Icon name="instagram" class="text-light-gold text-4xl hover:text-gold" />
+          </a>
+        </div>
       </div>
     </div>
   </div>
