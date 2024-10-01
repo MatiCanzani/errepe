@@ -6,7 +6,6 @@ import react from "@astrojs/react";
 import partytown from "@astrojs/partytown";
 import icon from "astro-icon";
 
-
 // https://astro.build/config
 export default defineConfig({
   site: "https://errepeproductora.com/",
