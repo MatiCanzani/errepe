@@ -103,11 +103,13 @@ import ImageBottom from "../images/image_bottom.png";
     <Picture
       src={ImageBottom}
       alt="Night Tent event image"
-      class="w-full"
       width={ImageBottom.width}
       height={ImageBottom.height}
       loading="eager"
-      formats={['avif', 'webp']}
+      fetchpriority="high"
+      formats={['avif', 'webp', 'jpeg']}
+      widths={[400, 800, 1200, 1600]}
+      sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1200px) 1200px, 100vw"
     />
   </div>
 </div>
