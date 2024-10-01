@@ -9,9 +9,7 @@ import icon from "astro-icon";
 export default defineConfig({
   site: "https://errepeproductora.com/",
   output: "hybrid",
-  adapter: vercel({ webAnalytics: {
-    enabled: true,
-  },}),
+  adapter: vercel(),
   integrations: [tailwind(), react(), icon()],
   compressHTML: true,
 });
