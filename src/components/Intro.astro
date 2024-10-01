@@ -9,7 +9,7 @@ import ImageBottom from "../images/image_bottom.png";
   <div
     class="flex justify-center flex-col max-h-48 w-full gap-8 items-center z-50 md:absolute md:mt-[20%] md:top-0"
   >
-    <div class="flex justify-center items-center mx-auto min-w-full">
+    <div class="flex justify-center items-center mx-auto relative w-full h-auto">
       <div class="flex flex-col">
         <div class="flex flew-row gap-6 md:gap-8 justify-center items-center">
           <div class="logo h-28 md:h-36 flex justify-start">
@@ -107,9 +107,13 @@ import ImageBottom from "../images/image_bottom.png";
       width={ImageBottom.width}
       height={ImageBottom.height}
       loading="eager"
+      widths={[400, 800, 1200]}
+      sizes="(max-width: 768px) 100vw, (min-width: 769px) 1200px"
+      format="webp"
     />
   </div>
 </div>
+
 <script>
   import { gsap } from "gsap";
 

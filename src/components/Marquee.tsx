@@ -149,6 +149,7 @@ const Marquee: React.FC = () => {
               height={200}
               className="max-h-20 xl:max-h-36 max-w-[200px]
               "
+              loading="lazy"
             />
           </li>
         ))}
