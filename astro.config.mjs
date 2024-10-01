@@ -9,15 +9,9 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://errepeproductora.com/",
   output: "hybrid",
   adapter: vercel(),
   integrations: [tailwind(), react(), partytown(), icon()],
-  buildOptions: {
-    loaders: {
-      ".js": "esbuild",
-      ".jsx": "esbuild",
-      ".ts": "esbuild",
-      ".tsx": "esbuild"
-    }
-  }
+  compressHTML: true,
 });
