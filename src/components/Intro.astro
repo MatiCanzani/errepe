@@ -9,7 +9,7 @@ import ImageBottom from "../images/image_bottom.png";
   <div
     class="flex justify-center flex-col max-h-48 w-full gap-8 items-center z-50 md:absolute md:mt-[20%] md:top-0"
   >
-    <div class="flex justify-center items-center mx-auto">
+    <div class="flex justify-center items-center mx-auto min-w-full">
       <div class="flex flex-col">
         <div class="flex flew-row gap-6 md:gap-8 justify-center items-center">
           <div class="logo h-28 md:h-36 flex justify-start">
@@ -82,10 +82,10 @@ import ImageBottom from "../images/image_bottom.png";
       </div>
     </div>
     <div class="flex flex-row location text-center">
-      <h2 class="uppercase text-black text-xl md:text-2xl  font-compactaBT">
+      <h2 class="uppercase text-black text-xl md:text-2xl font-compactaBT">
         Buenos Aires -
       </h2>
-      <h2 class="uppercase text-black text-xl md:text-2xl  font-compactaBT pl-2">
+      <h2 class="uppercase text-black text-xl md:text-2xl font-compactaBT pl-2">
         <a
           href="https://star-carpas.com/"
           target="_blank"
@@ -100,7 +100,14 @@ import ImageBottom from "../images/image_bottom.png";
     </div>
   </div>
   <div class="absolute bottom-0 md:relative md:mt-[25%] w-full">
-    <Image src={ImageBottom} alt="Night Tent event image" class="w-full" />
+    <Image
+      src={ImageBottom}
+      alt="Night Tent event image"
+      class="w-full"
+      width={ImageBottom.width}
+      height={ImageBottom.height}
+      loading="eager"
+    />
   </div>
 </div>
 <script>
