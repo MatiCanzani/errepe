@@ -1,0 +1,1 @@
+import{g as e}from"./index.DEqwg3Z9.js";import{S as t}from"./ScrollTrigger.DZdR0iV_.js";e.registerPlugin(t);document.querySelectorAll(".box").forEach((r,o)=>{e.from(r,{opacity:0,yPercent:10,ease:"power2",duration:1,scrollTrigger:{trigger:r,start:"top 90%",end:"bottom 20%"},delay:o*.2})});
