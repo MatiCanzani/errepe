@@ -8,8 +8,12 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: "https://errepeproductora.com/",
-  output: 'server',
-  adapter: vercel(),
+  output: 'static',
+  adapter: vercel({
+    imageService: true,
+    devImageService: 'sharp',
+    isr: true,
+  }),
   integrations: [tailwind(), react(), icon()],
   compressHTML: true,
 });
