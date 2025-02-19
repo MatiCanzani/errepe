@@ -1,6 +1,7 @@
 ---
-import { Picture } from "astro:assets";
-import ImageBottom from "../images/image_bottom.png";
+import { Image } from "astro:assets";
+import NightTent from "../images/night-tent.png";
+
 ---
 
 <div
@@ -102,17 +103,11 @@ import ImageBottom from "../images/image_bottom.png";
     </div>
   </div>
   <div class="absolute bottom-0 md:relative md:mt-[25%] w-full">
-    <Picture
-      src={ImageBottom}
-      alt="Night Tent event image"
-      widths={[400, 800, 1200, 1600]}
-      sizes="(max-width: 400px) 400px, (max-width: 800px) 800px, (max-width: 1200px) 1200px, 100vw"
-      formats={["avif", "webp", "jpg"]}
-      quality={80}
-      loading="eager"
-      width={ImageBottom.width}
-      height={ImageBottom.height}
-    />
+    <Image src={NightTent} alt="Night Tent event image"
+]   loading="eager"
+    width={NightTent.width}
+    height={NightTent.height} 
+    class="w-screen"/>
   </div>
 </div>
 
