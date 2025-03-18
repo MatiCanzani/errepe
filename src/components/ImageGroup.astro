@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets";
+const { group } = Astro.props;
+
+interface Image {
+  src: ImageMetadata;
+  alt: string;
+}
+---
+
+
+<div class={`flex flex-col md:flex-row gap-4 ${group.reverseOnDesktop ? "md:flex-row-reverse" : ""}`}>
+  {group.images.map((image: Image) => (
+    <div class="flex-1">
+      <Image
+        src={image.src}
+        alt={image.alt}
+        class="rounded-md box w-full"
+        loading="lazy"
+      />
+    </div>
+  ))}
+</div>
