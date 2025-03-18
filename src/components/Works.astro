@@ -7,40 +7,59 @@ import Front1 from "../images/works/Desktop-2-2-2.png";
 import Front3 from "../images/works/Desktop_1_1_1.png";
 import Front2 from "../images/works/Desktop_3_3_3.png";
 
-const images = [
-  {
-    src: Front1,
-    alt: "Front page design version 1 for desktop",
-  },
-  {
-    src: Event01,
-    alt: "Event page design version 1 for desktop",
-  },
-  {
-    src: Front3,
-    alt: "Front page design version 3 for desktop",
-  },
-  {
-    src: Event02,
-    alt: "Event page design version 2 for desktop",
-  },
-  {
-    src: Front2,
-    alt: "Front page design version 2 for desktop",
-  },
-  {
-    src: Event05,
-    alt: "Event page design version 5 for desktop",
-  },
+const imageGroups = [
+  [
+    {
+      src: Front1,
+      alt: "Front page design version 1 for desktop",
+    },
+    {
+      src: Event01,
+      alt: "Event page design version 1 for desktop",
+    },
+  ],
+
+  [
+    {
+      src: Event02,
+      alt: "Event page design version 2 for desktop",
+    },
+    {
+      src: Front3,
+      alt: "Front page design version 3 for desktop",
+    },
+  ],
+  [
+    {
+      src: Front2,
+      alt: "Front page design version 2 for desktop",
+    },
+    {
+      src: Event05,
+      alt: "Event page design version 5 for desktop",
+    },
+  ],
 ];
 ---
 
-<div class="w-full xl:w-full h-full mx-auto my-0 bg-deep-blue p-10 works">
-  <div class="columns-1 md:columns-2">
+<div
+  class="container w-11/12 md:w-full flex mx-auto justify-center items-end flex-col h-full py-20"
+>
+  <div
+    class="flex justify-center items-center mx-auto flex-col w-full gap-4 works"
+  >
     {
-      images.map((data) => (
-        <div class="relative mb-4 before:content-[''] before:rounded-md before:absolute ">
-          <Image src={data.src} alt={data.alt} class="rounded-md w-full box" />
+      imageGroups.map((group) => (
+        <div class="flex justify-center items-center flex-col md:flex-row gap-4">
+          {group.map((image) => (
+            <div class="flex justify-center items-center">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                class="rounded-md box w-full md:w-3/4"
+              />
+            </div>
+          ))}
         </div>
       ))
     }

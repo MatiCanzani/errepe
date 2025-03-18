@@ -1,0 +1,1 @@
+import{g as e}from"./index.DEqwg3Z9.js";document.addEventListener("DOMContentLoaded",()=>{const t=e.timeline();t.from(".title",{opacity:0,delay:.5,duration:1,scale:1.5,transformOrigin:"center",stagger:{amount:.3}}),t.from(".location",{opacity:0,duration:.7,y:-30,ease:"sine.out",stagger:{amount:.3}})});

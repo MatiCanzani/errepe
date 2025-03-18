@@ -15,6 +15,7 @@ module.exports = {
         MyriadPro: ["MyriadPro", ...defaultTheme.fontFamily.sans],
         compactaBT: ["compactaBT", ...defaultTheme.fontFamily.sans],
         FormaDJRMicro: ["FormaDJRMicro", ...defaultTheme.fontFamily.sans],
+        Rocgroteskcond: ["Rocgroteskcond", ...defaultTheme.fontFamily.sans],
       },
       backgroundImage: {
         "event-1-desktop": "url('/src/images/works/Desktop_1.png')",
