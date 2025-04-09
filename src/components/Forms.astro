@@ -152,6 +152,10 @@
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
+    const callback = () => {
+      console.log("Evento enviado correctamente");
+    };
+
     result.innerHTML = "Please wait...";
 
     fetch("https://api.web3forms.com/submit", {
@@ -166,6 +170,25 @@
         let json = await response.json();
         if (response.status == 200) {
           result.innerHTML = "Email enviado con éxito";
+          // 🚀 GTM EVENT TRACKING
+          if (typeof gtag === "function") {
+            gtag("event", "conversion_event_default_1", {
+              event_category: "Formulario",
+              event_label: "Contacto Enviado",
+              value: 1,
+            });
+          }
+
+          // dataLayer para GTM
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "form_submit",
+            form_id: form.id,
+            event_category: "Formulario",
+            event_action: "Envío",
+            event_label: "Formulario de contacto",
+            event_callback: callback,
+          });
         } else {
           console.log(response);
           result.innerHTML = json.message;

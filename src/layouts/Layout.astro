@@ -32,6 +32,38 @@ import Footer from "../components/Footer.astro";
       crossorigin
     />
     <GtagAw />
+    <script is:inline>
+      window.gtagSendEvent = function (url) {
+        var callback = function () {
+          if (typeof url === "string") {
+            window.location = url;
+          }
+
+          gtag("event", "whatsapp_click", {
+            event_category: "WhatsApp",
+            event_label: "Botón flotante",
+            value: 1,
+            event_callback: callback,
+            event_timeout: 2000,
+          });
+        };
+
+        gtag("event", "conversion_event_default", {
+          event_callback: callback,
+          event_timeout: 2000,
+        });
+
+        if (
+          !newWindow ||
+          newWindow.closed ||
+          typeof newWindow.closed == "undefined"
+        ) {
+          window.location = url;
+        }
+
+        return false;
+      };
+    </script>
     <Gtm />
     <!-- Meta Pixel Code -->
     <script is:inline>
