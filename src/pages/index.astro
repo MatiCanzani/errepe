@@ -11,29 +11,29 @@ import Contact from "../components/Contact.astro";
 import Staff from "../components/Staff.astro";
 import Works from "../components/Works.astro";
 import Whatsapp from "../components/Whatsapp.astro";
+import HamburgerMenu from "../components/HamburgerMenu.astro";
 ---
 
 <Layout title="ERREPE">
   <main>
-    <SectionBlue>
-      <Intro />
-    </SectionBlue>
-    <SectionYellow>
+    <HamburgerMenu />
+    <Intro />
+    <SectionYellow data-theme="light" id="rp-services">
       <Services />
     </SectionYellow>
-    <SectionBrown>
+    <SectionBrown data-theme="light" id="about-rp">
       <About />
     </SectionBrown>
-    <SectionYellow>
+    <SectionYellow data-theme="light" id="rp-clients">
       <Clients />
     </SectionYellow>
-    <SectionBlue>
+    <SectionBlue data-theme="dark" id="rp-works">
       <Works />
     </SectionBlue>
-    <SectionYellow>
+    <SectionYellow data-theme="light" id="rp-staff">
       <Staff />
     </SectionYellow>
-    <SectionBlue>
+    <SectionBlue data-theme="dark" id="contact-rp">
       <Contact />
     </SectionBlue>
     <Whatsapp />

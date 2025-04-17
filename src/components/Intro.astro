@@ -4,10 +4,11 @@ import Portada from "../images/portada.png";
 ---
 
 <div
+  data-theme="light"
   class="w-full bg-brown-1 flex justify-center flex-col items-center min-h-svh"
 >
   <div
-    class="flex justify-center flex-col max-h-48 w-full gap-8 items-center absolute z-50"
+    class="flex justify-center flex-col max-h-48 w-full gap-8 items-center absolute z-10"
   >
     <div class="flex flex-row location text-center absolute mb-96">
       <h2 class="uppercase text-black text-xl md:text-2xl font-compactaBT">
@@ -30,7 +31,9 @@ import Portada from "../images/portada.png";
       class="flex justify-center items-center mx-auto relative w-full h-auto"
     >
       <div class="flex flex-col">
-        <div class="flex flew-row gap-6 md:gap-8 justify-center items-center title">
+        <div
+          class="flex flew-row gap-6 md:gap-8 justify-center items-center title"
+        >
           <div
             class="relative w-full flex flex-col md:flex-row items-center justify-center gap-1 md:gap-8"
           >
@@ -80,25 +83,6 @@ import Portada from "../images/portada.png";
         amount: 0.3,
       },
     });
-
-    // tl.from(".title", {
-    //   opacity: 0,
-    //   duration: 0.7,
-    //   y: -100,
-    //   ease: "sine.out",
-    //   stagger: {
-    //     amount: 0.3,
-    //   },
-    // });
-
-    // tl.from(".subtitle", {
-    //   opacity: 0,
-    //   duration: 0.7,
-    //   ease: "sine.out",
-    //   stagger: {
-    //     amount: 0.3,
-    //   },
-    // });
 
     tl.from(".location", {
       opacity: 0,

@@ -1,0 +1,157 @@
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  const overlay = document.querySelector("#menuOverlay");
+  const button = document.querySelector("#menuButton");
+  const menuBtn = document.querySelector("#menuButton");
+  const spans = menuBtn.querySelectorAll("span");
+  const links = document.querySelectorAll("nav#menuOverlay a");
+  const sections = document.querySelectorAll("[data-theme]");
+
+  function updateMenuButton(theme) {
+    if (!menuBtn) return;
+    spans.forEach((span) => {
+      span.classList.remove("bg-white", "bg-black");
+      if (theme === "dark") {
+        span.classList.add("bg-white");
+      } else {
+        span.classList.add("bg-black");
+      }
+    });
+  }
+
+  window.toggleMenu = function () {
+    if (overlay && button) {
+      overlay.classList.toggle("-translate-x-full");
+      button.classList.toggle("open");
+
+      const isOpen = button.classList.contains("open");
+
+      spans.forEach((span) => {
+        span.classList.remove("bg-white", "bg-black");
+        if (isOpen) {
+          span.classList.add("bg-black");
+        } else {
+          const currentSection = Array.from(sections).find((section) => {
+            const rect = section.getBoundingClientRect();
+            return rect.top <= 64 && rect.bottom >= 64;
+          });
+
+          const theme = currentSection?.getAttribute("data-theme") || "light";
+          if (theme === "dark") {
+            span.classList.add("bg-white");
+          } else {
+            span.classList.add("bg-black");
+          }
+        }
+      });
+    }
+  };
+
+  window.closeMenu = function () {
+    if (overlay && button) {
+      overlay.classList.add("-translate-x-full");
+      button.classList.remove("open");
+    }
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    links.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const href = link.getAttribute("href");
+        const target = document.querySelector(href);
+        if (target) {
+          window.closeMenu();
+          setTimeout(() => {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }, 300);
+        }
+      });
+    });
+
+    sections.forEach((section) => {
+      const theme = section.getAttribute("data-theme");
+
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top top+=64",
+        end: "bottom top+=64",
+        onEnter: () => updateMenuButton(theme),
+        onEnterBack: () => updateMenuButton(theme),
+      });
+    });
+  });
+</script>
+
+<div class="fixed top-4 left-4 z-[999]">
+  <button
+    id="menuButton"
+    class="relative w-10 h-10 flex items-center justify-center transition-colors duration-300"
+    onclick="toggleMenu()"
+    aria-label="Toggle menu"
+  >
+    <span class="absolute w-6 h-0.5 bg-current transition-all duration-300"
+    ></span>
+    <span
+      class="absolute w-6 h-0.5 bg-current transition-all duration-300 translate-y-2"
+    ></span>
+    <span
+      class="absolute w-6 h-0.5 bg-current transition-all duration-300 -translate-y-2"
+    ></span>
+  </button>
+</div>
+
+<style is:global>
+  #menuButton.open span:nth-child(1) {
+    transform: rotate(45deg);
+  }
+
+  #menuButton.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #menuButton.open span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
+  #menuButton span {
+    transition: background-color 0.3s ease-in-out;
+  }
+</style>
+
+<nav
+  id="menuOverlay"
+  class="fixed top-0 left-0 z-50 w-full h-full bg-white transform -translate-x-full transition-transform duration-300 ease-in-out flex flex-col items-center justify-center space-y-6 font-compactaBT"
+>
+  <script>
+    const menuItems = [
+      { label: "Servicios", href: "#rp-services" },
+      { label: "Nosotros", href: "#about-rp" },
+      { label: "Clientes", href: "#rp-clients" },
+      { label: "Proyectos", href: "#rp-works" },
+      { label: "Equipo", href: "#rp-staff" },
+      { label: "Contacto", href: "#contact-rp" },
+    ];
+
+    menuItems.forEach((item) => {
+      const a = document.createElement("a");
+      a.href = item.href;
+      a.classList.add(
+        "text-3xl",
+        "uppercase",
+        "font-medium",
+        "text-gray-800",
+        "hover:text-gold",
+        "transition"
+      );
+      a.textContent = item.label;
+      a.onclick = function () {
+        window.closeMenu();
+      };
+      document.querySelector("#menuOverlay").appendChild(a);
+    });
+  </script>
+</nav>

@@ -11,32 +11,30 @@ const imageGroups = [
   {
     images: [
       { src: Front1, alt: "Front page design version 1" },
-      { src: Event01, alt: "Event page design version 1" }
+      { src: Event01, alt: "Event page design version 1" },
     ],
-    reverseOnDesktop: false
+    reverseOnDesktop: false,
   },
   {
     images: [
       { src: Front3, alt: "Front page design version 3" },
-      { src: Event02, alt: "Event page design version 2" }
+      { src: Event02, alt: "Event page design version 2" },
     ],
-    reverseOnDesktop: true // ← This group reverses order on desktop
+    reverseOnDesktop: true,
   },
   {
     images: [
       { src: Front2, alt: "Front page design version 2" },
-      { src: Event05, alt: "Event page design version 5" }
+      { src: Event05, alt: "Event page design version 5" },
     ],
-    reverseOnDesktop: false
+    reverseOnDesktop: false,
   },
 ];
 ---
 
 <div class="container w-11/12 md:w-full mx-auto py-20">
   <div class="flex flex-col gap-4 works">
-    {imageGroups.map((group) => (
-      <ImageGroup group={group} />
-    ))}
+    {imageGroups.map((group) => <ImageGroup group={group} />)}
   </div>
 </div>
 

@@ -46,5 +46,8 @@ module.exports = {
       "brown-1": "#D3B98D",
     },
   },
+  corePlugins: {
+    scrollBehavior: true,
+  },
   plugins: [require("flowbite/plugin")],
 };

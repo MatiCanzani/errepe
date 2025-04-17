@@ -1,3 +1,11 @@
-<section class=" bg-deep-blue h-full w-full flex justify-center">
+---
+const { id = "" } = Astro.props;
+---
+
+<section
+  id={id}
+  {...Astro.props}
+  class="bg-deep-blue h-full w-full flex justify-center"
+>
   <slot />
 </section>
